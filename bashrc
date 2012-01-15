@@ -1,0 +1,44 @@
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
+export PAGER="`which less` -s"
+export BROWSER="$PAGER"
+export LESS_TERMCAP_mb=$'\E[38;5;167m'
+export LESS_TERMCAP_md=$'\E[38;5;39m'
+export LESS_TERMCAP_me=$'\E[38;5;231m'
+export LESS_TERMCAP_se=$'\E[38;5;231m'
+export LESS_TERMCAP_so=$'\E[38;5;167m'
+export LESS_TERMCAP_ue=$'\E[38;5;231m'
+export LESS_TERMCAP_us=$'\E[38;5;167m'
+
+# setting different variable when in OS X
+if [ $(uname) == "Darwin" ]; then
+	COMPLETION_PATH=$(brew --prefix)/etc/bash_completion
+	LS_ALIAS='ls -vG'
+else
+	COMPLETION_PATH=/etc/bash_completion
+	LS_ALIAS='ls --color=auto'
+fi
+
+# prompt string with git branch display & dirty bit
+GIT_PS1_SHOWDIRTYSTATE=1
+PS1='\[\033[01;34m\]\u\[\033[01;37m\]@\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;31m\]\W\[\033[00m\]$(__git_ps1 "(%s)")\$ '
+
+# system completion
+if [ -f "${COMPLETION_PATH}" ]; then
+	. ${COMPLETION_PATH}
+fi
+
+# customized completion
+if [ -d ~/.bash_completion.d ]; then
+	for file in $(ls ~/.bash_completion.d); do
+		. ~/.bash_completion.d/${file}
+	done
+fi
+
+# enable color support of ls and some general alias
+alias ls=${LS_ALIAS}
+alias ll='ls -al'
+alias la='ls -a'
+alias vi='vim'
+
