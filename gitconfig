@@ -1,0 +1,13 @@
+[user]
+	name = nevermind
+	email = nevermind@2be.com.tw
+[alias]
+	recommit = commit --amend
+	unstage = reset HEAD --
+	view = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cblueby %cn %Cgreen(%cr)%Creset'
+[color]
+	ui = auto
+[merge]
+	tool = vimdiff
+[core]
+	editor = vim
