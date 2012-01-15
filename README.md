@@ -1,36 +1,17 @@
 Install
 -------
-
-Start
+Below will link all dotfiles in this repository into your home directory, but won't overwrtite any existing one
 
 	git clone git://github.com/lessmind/dotfiles.git <your path>
 	cd <your path>
+	./install
+	vi ~/.gitconfig
 
-Under ubuntu or fedora
-
-	git checkout unix
-
-Under Mac OS X
-
-	git checkout mac
-
-After above
-
-	./install mac # Or use unix instead
-	vi ~/.gitconfig # Modify the [user] section
+Dont forget to modify the [user] section in last command.
 
 Uninstall
 ---------
-
-This will remove all dotfile linked from here
+This will remove all dotfile linked from this repository(make sure this repository in the **same place** when you run ./install.sh)
 
 	cd <your path>
-	./install.sh mac -u # Or use unix instead
-
-Usage
------
-
-When in vim
-
-- press F2 to toggle NERDTreeTabs
-- press F3 to toggle Tagbar
+	./install.sh mac
