@@ -16,10 +16,10 @@ if [ "$1" == "mac" -o "$1" == "unix" ]; then
 
 	# configure completion path and bash profile name depends on OS given in $1
 	if [ "$1" == "mac" ]; then
-		COMPLETION_PATH=`brew --prefix`/etc/bash_completion.d/
+		COMPLETION_PATH=`brew --prefix`/etc/bash_completion.d
 		BASHFILE="bash_profile"
 	else
-		COMPLETION_PATH=/etc/bash_completion.d/
+		COMPLETION_PATH=/etc/bash_completion.d
 		BASHFILE="bashrc"
 	fi
 
@@ -46,7 +46,7 @@ if [ "$1" == "mac" -o "$1" == "unix" ]; then
 				echo $(lastPiece "`ls -ltr $COMPLETION_PATH/$file`")
 				echo $(echo "$DIR"/bash_completion/"$file")
 				if [ -h "$COMPLETION_PATH"/"$file" -a $(lastPiece "`ls -ltr $COMPLETION_PATH/$file`") == $(echo "$DIR"/bash_completion/"$file") ]; then
-					rm "$COMPLETION_PATH"/"$file"
+					sudo rm "$COMPLETION_PATH"/"$file"
 				fi
 			done
 		fi
