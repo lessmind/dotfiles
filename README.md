@@ -14,4 +14,4 @@ Uninstall
 This will remove all dotfile linked from this repository(make sure this repository in the **same place** when you run ./install.sh)
 
 	cd <clone path>
-	./install.sh
+	./install.sh -u
