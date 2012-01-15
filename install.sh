@@ -35,16 +35,12 @@ if [ "$1" == "mac" -o "$1" == "unix" ]; then
 	if [ "$2" == "-u" ]; then
 		for file in ${DOTFILES[@]}; do
 			# remove link dotfiles when it's a symbolic link
-			echo $(lastPiece "`ls -ltr ~/.$file`")
-			echo $(echo "$DIR"/"$file")
 			if [ -h ~/."$file" -a $(lastPiece "`ls -ltr ~/.$file`") == $(echo "$DIR"/"$file") ]; then
 				rm ~/."$file"
 			fi
 		done
 		if [ -d "$COMPLETION_PATH" ]; then
 			for file in `ls $DIR/bash_completion`; do
-				echo $(lastPiece "`ls -ltr $COMPLETION_PATH/$file`")
-				echo $(echo "$DIR"/bash_completion/"$file")
 				if [ -h "$COMPLETION_PATH"/"$file" -a $(lastPiece "`ls -ltr $COMPLETION_PATH/$file`") == $(echo "$DIR"/bash_completion/"$file") ]; then
 					sudo rm "$COMPLETION_PATH"/"$file"
 				fi
@@ -54,11 +50,17 @@ if [ "$1" == "mac" -o "$1" == "unix" ]; then
 	else
 		# link dotfiles
 		for file in ${DOTFILES[@]}; do
-			ln -s "$DIR"/$file ~/.$file
+			if [ ! -h ~/."$file" -a ! -f ~/."$file" ]; then
+				ln -s "$DIR"/$file ~/.$file
+			fi
 		done
 		# link completions
 		if [ -d "$COMPLETION_PATH" ]; then
-			sudo ln -s "$DIR"/bash_completion/* "$COMPLETION_PATH"/
+			for file in `ls $DIR/bash_completion`; do
+				if [ ! -h "$COMPLETION_PATH"/"$file" -a ! -f "$COMPLETION_PATH"/"$file" ]; then
+					sudo ln -s "$DIR"/bash_completion/"$file" "$COMPLETION_PATH"/"$file"
+				fi
+			done
 		fi
 		# initial vim plugins
 		cd "$DIR" && git submodule init
