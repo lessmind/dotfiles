@@ -16,10 +16,8 @@ if [ "${1}" == "mac" -o "${1}" == "unix" ]; then
 
 	# configure completion path and bash profile name depends on OS given in $1
 	if [ "${1}" == "mac" ]; then
-		COMPLETION_PATH=$(brew --prefix)/etc/bash_completion.d
 		BASHFILE="bash_profile"
 	else
-		COMPLETION_PATH=/etc/bash_completion.d
 		BASHFILE="bashrc"
 	fi
 
@@ -29,6 +27,7 @@ if [ "${1}" == "mac" -o "${1}" == "unix" ]; then
 	vim
 	vimrc
 	gitconfig
+	bash_completion.d
 	)
 
 	# uninstall 
@@ -39,13 +38,6 @@ if [ "${1}" == "mac" -o "${1}" == "unix" ]; then
 				rm ~/."${file}"
 			fi
 		done
-		if [ -d "${COMPLETION_PATH}" ]; then
-			for file in $(ls ${DIR}/bash_completion); do
-				if [ -h "${COMPLETION_PATH}"/"${file}" -a $(lastPiece "$(ls -ltr ${COMPLETION_PATH}/${file})") == $(echo "${DIR}"/bash_completion/"${file}") ]; then
-					sudo rm "${COMPLETION_PATH}"/"${file}"
-				fi
-			done
-		fi
 	# install
 	else
 		# link dotfiles
@@ -54,14 +46,6 @@ if [ "${1}" == "mac" -o "${1}" == "unix" ]; then
 				ln -s "${DIR}"/${file} ~/.${file}
 			fi
 		done
-		# link completions
-		if [ -d "${COMPLETION_PATH}" ]; then
-			for file in $(ls ${DIR}/bash_completion); do
-				if [ ! -h "${COMPLETION_PATH}"/"${file}" -a ! -f "${COMPLETION_PATH}"/"${file}" ]; then
-					sudo ln -s "${DIR}"/bash_completion/"${file}" "${COMPLETION_PATH}"/"${file}"
-				fi
-			done
-		fi
 		# initial vim plugins
 		cd "${DIR}" && git submodule init
 		cd "${DIR}" && git submodule update
