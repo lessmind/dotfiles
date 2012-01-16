@@ -2,7 +2,7 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
 syntax on
-colorscheme torte
+colorscheme inkpot
 set tags=./tags,tags
 set nocompatible
 set backspace=2
@@ -13,7 +13,7 @@ set ruler
 set hlsearch
 set incsearch
 "set cursorline
-"set ai
+set ai
 set cin
 set foldmethod=indent
 set foldlevel=5
@@ -27,6 +27,7 @@ nmap <F2> :NERDTreeTabsToggle<CR>
 nmap <F3> :TagbarToggle<CR><C-w>p
 vmap <F3> <esc>:TagbarToggle<CR><C-w>p
 imap <F3> <esc>:TagbarToggle<CR><C-w>p
+set t_Co=256
 
 if has("autocmd")
 	filetype plugin indent on
