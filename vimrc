@@ -27,6 +27,8 @@ nmap <F2> :NERDTreeTabsToggle<CR>
 nmap <F3> :TagbarToggle<CR><C-w>p
 vmap <F3> <esc>:TagbarToggle<CR><C-w>p
 imap <F3> <esc>:TagbarToggle<CR><C-w>p
+nmap <F11> gT
+nmap <F12> gt
 set t_Co=256
 
 if has("autocmd")
