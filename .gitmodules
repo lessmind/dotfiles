@@ -7,6 +7,4 @@
 [submodule "vim/bundle/tagbar"]
 	path = vim/bundle/tagbar
 	url = git://github.com/majutsushi/tagbar.git
-[submodule "misc/git-flow-completion"]
-	path = misc/git-flow-completion
-	url = git://github.com/bobthecow/git-flow-completion.git
+
