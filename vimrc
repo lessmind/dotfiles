@@ -2,7 +2,7 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
 syntax on
-colorscheme inkpot
+colorscheme herald_mod
 set tags=./tags,tags
 set nocompatible
 set backspace=2
@@ -33,6 +33,8 @@ imap <F11> <esc>gT
 imap <F12> <esc>gt
 vmap <F11> <esc>gT
 vmap <F12> <esc>gt
+nmap ,, :set paste!<BAR>set paste?<CR>
+vmap ,, <esc>:set paste!<BAR>set paste?<CR>
 set t_Co=256
 
 if has("autocmd")
