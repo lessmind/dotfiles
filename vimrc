@@ -21,14 +21,18 @@ vmap <tab> >gv
 vmap <BS> <gv
 nmap <tab> v>
 nmap <BS> v<
-imap <F2> <esc> :NERDTreeTabsToggle<CR>
-vmap <F2> <esc> :NERDTreeTabsToggle<CR>
-nmap <F2> :NERDTreeTabsToggle<CR>
+imap <F2> <esc> :NERDTreeToggle<CR>
+vmap <F2> <esc> :NERDTreeToggle<CR>
+nmap <F2> :NERDTreeToggle<CR>
 nmap <F3> :TagbarToggle<CR><C-w>p
 vmap <F3> <esc>:TagbarToggle<CR><C-w>p
 imap <F3> <esc>:TagbarToggle<CR><C-w>p
 nmap <F11> gT
 nmap <F12> gt
+imap <F11> <esc>gT
+imap <F12> <esc>gt
+vmap <F11> <esc>gT
+vmap <F12> <esc>gt
 set t_Co=256
 
 if has("autocmd")
