@@ -2,7 +2,7 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
 syntax on
-colorscheme herald_mod
+colorscheme mango
 set tags=./tags,tags
 set nocompatible
 set backspace=2
@@ -12,7 +12,7 @@ set tabstop=4
 set ruler
 set hlsearch
 set incsearch
-"set cursorline
+set cursorline
 set ai
 set cin
 set foldmethod=indent
@@ -33,8 +33,8 @@ imap <F11> <esc>gT
 imap <F12> <esc>gt
 vmap <F11> <esc>gT
 vmap <F12> <esc>gt
-nmap ,, :set paste!<BAR>set paste?<CR>
-vmap ,, <esc>:set paste!<BAR>set paste?<CR>
+nmap <F10> :set paste!<BAR>set paste?<CR>
+vmap <F10> <esc>:set paste!<BAR>set paste?<CR>
 set t_Co=256
 
 if has("autocmd")
