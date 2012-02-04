@@ -8,3 +8,6 @@
 [submodule "vim/bundle/mango"]
 	path = vim/bundle/mango
 	url = git://github.com/goatslacker/mango.vim.git
+[submodule "vim/bundle/matchit"]
+	path = vim/bundle/matchit
+	url = git://github.com/tsaleh/vim-matchit.git
