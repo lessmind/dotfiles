@@ -1,0 +1,27 @@
+[submodule "vim/bundle/tagbar"]
+	path = vim/bundle/tagbar
+	url = git://github.com/majutsushi/tagbar.git
+[submodule "vim/bundle/syntax-js"]
+	path = vim/bundle/syntax-js
+	url = git://github.com/othree/javascript-syntax.vim.git
+[submodule "vim/bundle/checksyntax"]
+	path = vim/bundle/checksyntax
+	url = git://github.com/tomtom/checksyntax_vim.git
+[submodule "vim/bundle/gsession"]
+	path = vim/bundle/gsession
+	url = git://github.com/c9s/gsession.vim.git
+[submodule "vim/bundle/scheme-mango"]
+	path = vim/bundle/scheme-mango
+	url = git://github.com/goatslacker/mango.vim.git
+[submodule "vim/bundle/matchit"]
+	path = vim/bundle/matchit
+	url = git://github.com/tsaleh/vim-matchit.git
+[submodule "vim/bundle/nerdtree"]
+	path = vim/bundle/nerdtree
+	url = git://github.com/scrooloose/nerdtree.git
+[submodule "vim/bundle/syntax-php"]
+	path = vim/bundle/syntax-php
+	url = git://github.com/StanAngeloff/php.vim.git
+[submodule "vim/bundle/scrollcolors"]
+	path = vim/bundle/scrollcolors
+	url = git://github.com/vim-scripts/ScrollColors.git
