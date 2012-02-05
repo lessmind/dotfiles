@@ -3,6 +3,8 @@ call pathogen#helptags()
 
 " colorful
 syntax on
+" 256 color
+set t_Co=256
 colorscheme mango
 
 " tags
@@ -55,9 +57,6 @@ vmap <F11> <esc>gT
 vmap <F12> <esc>gt
 nmap <F10> :set paste!<BAR>set paste?<CR>
 vmap <F10> <esc>:set paste!<BAR>set paste?<CR>
-
-" 256 color
-set t_Co=256
 
 " NeoComplCache auto command
 "autocmd FileType * NeoComplCacheEnable
