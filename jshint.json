@@ -1,6 +1,6 @@
 {
 	"bitwise": true,
-	"curly": true,
+	"curly": false,
 	"eqeqeq": false,
 	"forin": false,
 	"immed": true,
@@ -21,7 +21,7 @@
 	"eqnull": false,
 	"es5": true,
 	"esnext": false,
-	"evil": false,
+	"evil": true,
 	"expr": false,
 	"funcscope": true,
 	"globalstrict": true,
