@@ -19,3 +19,6 @@
 [submodule "vim/bundle/scrollcolors"]
 	path = vim/bundle/scrollcolors
 	url = git://github.com/vim-scripts/ScrollColors.git
+[submodule "vim/bundle/syntax-json"]
+	path = vim/bundle/syntax-json
+	url = git://github.com/leshill/vim-json.git
