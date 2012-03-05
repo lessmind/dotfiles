@@ -58,6 +58,12 @@ vmap <F12> <esc>gt
 nmap <F10> :set paste!<BAR>set paste?<CR>
 vmap <F10> <esc>:set paste!<BAR>set paste?<CR>
 
+" syntastic
+let g:syntastic_javascript_jshint_conf='~/.jshint.json'
+let g:syntastic_auto_loc_list=1
+let g:syntastic_mode_map = { 'mode': 'active',
+						   \ 'active_filetypes': ['js', 'php', 'phtml']}
+
 " NeoComplCache auto command
 "autocmd FileType * NeoComplCacheEnable
 "autocmd FileType * NeoComplCacheCachingTags
