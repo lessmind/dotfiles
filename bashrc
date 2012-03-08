@@ -37,8 +37,8 @@ if [ -d ~/.bash_completion.d ]; then
 fi
 
 # enable color support of ls and some general alias
+alias grep='grep --color=auto'
 alias ls=${LS_ALIAS}
 alias ll='ls -al'
 alias la='ls -a'
 alias vi='vim'
-

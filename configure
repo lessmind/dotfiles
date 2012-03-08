@@ -11,16 +11,10 @@ function lastPiece {
 # get the script root path
 DIR="$( cd $(dirname "${0}") && pwd )"
 
-# configure completion path and bash profile name depends on OS given in $1
-if [ "$(uname)" == "Darwin" ]; then
-	BASHFILE="bash_profile"
-else
-	BASHFILE="bashrc"
-fi
-
 # list
 DOTFILES=(
-${BASHFILE}
+bashrc
+bash_profile
 vim
 vimrc
 gitconfig

@@ -13,7 +13,7 @@ To make Syntastic check in Javascript work, install [jshint](https://github.com/
 
 Uninstall
 ---------
-This will remove all dotfile linked from this repository(make sure this repository in the **same place** when you run ./cconfigure)
+This will remove all dotfile linked from this repository(make sure this repository in the **same place** when you run **./configure setup**)
 
 	cd <clone path>
 	./configure remove
