@@ -57,6 +57,13 @@ vmap <F11> <esc>gT
 vmap <F12> <esc>gt
 nmap <F10> :set paste!<BAR>set paste?<CR>
 vmap <F10> <esc>:set paste!<BAR>set paste?<CR>
+nmap <S-F8> <Leader>?
+nmap <S-F9> <Leader>/
+nmap <F8> <Leader>#
+nmap <F9> <Leader>*
+nmap <Leader>nn :MarkClear<CR>
+nmap <S-F11> :cp<CR>
+nmap <S-F12> :cn<CR>
 
 " syntastic
 let g:syntastic_javascript_jshint_conf='~/.jshint.json'
