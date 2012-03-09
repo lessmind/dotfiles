@@ -2,10 +2,7 @@
 
 # functions
 function lastPiece {
-	for piece in $( echo ${1} | tr " " "\n" ); do
-		last=${piece}
-	done
-	echo ${last}
+	echo $(echo ${1} | awk '{print $NF;}')
 }
 
 # get the script root path
