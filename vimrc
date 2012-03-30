@@ -72,10 +72,6 @@ nmap <S-F9> <Leader>/
 " prev/next current mark
 nmap <F8> <Leader>#
 nmap <F9> <Leader>*
-" hide/show marks
-nmap <Leader>t :Mark<CR>
-" clear marks
-nmap <Leader>nn :MarkClear<CR>
 " prev/next match in vimgrep
 nmap <S-F11> :cp<CR>
 nmap <S-F12> :cn<CR>
