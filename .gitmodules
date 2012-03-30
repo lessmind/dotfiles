@@ -13,9 +13,6 @@
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
-[submodule "vim/bundle/syntax-php"]
-	path = vim/bundle/syntax-php
-	url = git://github.com/StanAngeloff/php.vim.git
 [submodule "vim/bundle/scrollcolors"]
 	path = vim/bundle/scrollcolors
 	url = git://github.com/vim-scripts/ScrollColors.git
@@ -28,3 +25,6 @@
 [submodule "vim/bundle/mark-karkat"]
 	path = vim/bundle/mark-karkat
 	url = git://github.com/vim-scripts/Mark--Karkat.git
+[submodule "vim/bundle/syntax-php"]
+	path = vim/bundle/syntax-php
+	url = https://github.com/StanAngeloff/php.vim.git
