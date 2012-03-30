@@ -53,7 +53,7 @@
 	"rhino": false,
 	"wsh": false,
 
-	"nomen": true,
+	"nomen": false,
 	"onevar": false,
 	"passfail": false,
 	"white": false

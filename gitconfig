@@ -4,7 +4,7 @@
 [alias]
 	recommit = commit --amend
 	unstage = reset HEAD --
-	view = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cblueby %cn %Cgreen(%cr)%Creset'
+	view = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cblueby %an %Cgreen(%ar)%Creset'
 [color]
 	ui = auto
 [merge]
