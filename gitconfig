@@ -3,7 +3,7 @@
 	email = nevermind@2be.com.tw
 [alias]
 	recommit = commit --amend
-	unstage = reset HEAD --
+	unstage = reset HEAD
 	view = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cblueby %an %Cgreen(%ar)%Creset'
 [color]
 	ui = auto
