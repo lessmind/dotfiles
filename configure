@@ -7,6 +7,7 @@ function lastPiece {
 
 # get the script root path
 DIR="$( cd $(dirname "${0}") && pwd )"
+BACKUP_DIR="dotfiles_bak"
 
 # list
 DOTFILES=(
@@ -21,20 +22,33 @@ jshint.json
 
 case ${1} in
 	setup)
+		echo "......setting up config files"
+		if [ ! -d ~/${BACKUP_DIR} ]; then
+			if [ -a ~/${BACKUP_DIR} ]; then
+				rm -rf ~/${BACKUP_DIR}
+			fi
+			echo "......creating backup directory ${BACKUP_DIR}"
+			mkdir ~/${BACKUP_DIR}
+		fi
 		# link dotfiles
 		for file in ${DOTFILES[@]}; do
-			if [ ! -h ~/."${file}" -a ! -f ~/."${file}" ]; then
-				ln -s "${DIR}"/${file} ~/.${file}
+			if [ -a ~/."${file}" ]; then
+				echo "......backup old ~/.${file} into ${BACKUP_DIR}"
+				mv ~/.${file} ~/${BACKUP_DIR}/bak.${file}-$( date +%s )
 			fi
+			ln -s "${DIR}"/${file} ~/.${file}
 		done
 		# initial vim plugins
+		echo "initializing git submodules"
 		cd "${DIR}" && git submodule init
 		cd "${DIR}" && git submodule update
 	;;
 	remove)
+		echo "......removing config files"
 		for file in ${DOTFILES[@]}; do
 			# remove link dotfiles when it's a symbolic link
 			if [ -h ~/."${file}" -a $(lastPiece "$(ls -ltr ~/.${file})") == $(echo "${DIR}"/"${file}") ]; then
+				echo "......removing symbolic link ${file}"
 				rm ~/."${file}"
 			fi
 		done
