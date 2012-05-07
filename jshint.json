@@ -3,7 +3,7 @@
 	"curly": false,
 	"eqeqeq": false,
 	"forin": false,
-	"immed": true,
+	"immed": false,
 	"latedef": true,
 	"newcap": false,
 	"noarg": true,
