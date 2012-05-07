@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# functions
-function lastPiece {
-	echo $(echo ${1} | awk '{print $NF;}')
-}
-
 # get the script root path
 DIR="$( cd $(dirname "${0}") && pwd )"
 BACKUP_DIR="dotfiles_bak"
@@ -47,7 +42,7 @@ case ${1} in
 		echo "......removing config files"
 		for file in ${DOTFILES[@]}; do
 			# remove link dotfiles when it's a symbolic link
-			if [ -h ${HOME}/.${file} -a $(lastPiece $(ls -ltr ${HOME}/.${file})) == $(echo ${DIR}/${file}) ]; then
+			if [ -h ${HOME}/.${file} -a $(ls -l ${HOME}/.${file} | awk '{print $NF;}') == $(echo ${DIR}/${file}) ]; then
 				echo "......removing symbolic link ${file}"
 				rm ${HOME}/.${file}
 			fi
