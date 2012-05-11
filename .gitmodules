@@ -25,3 +25,6 @@
 [submodule "vim/bundle/syntax-php"]
 	path = vim/bundle/syntax-php
 	url = https://github.com/StanAngeloff/php.vim.git
+[submodule "vim/bundle/indent-html-php"]
+	path = vim/bundle/indent-html-php
+	url = git://github.com/rekky/php-html-indent.vim.git
