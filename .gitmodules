@@ -28,3 +28,6 @@
 [submodule "vim/bundle/indent-html-php"]
 	path = vim/bundle/indent-html-php
 	url = git://github.com/rekky/php-html-indent.vim.git
+[submodule "vim/bundle/pdv-standalone"]
+	path = vim/bundle/pdv-standalone
+	url = https://lessmind@github.com/lessmind/pdv-standalone.git
