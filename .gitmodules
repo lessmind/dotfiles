@@ -34,3 +34,6 @@
 [submodule "vim/bundle/selectColors"]
 	path = vim/bundle/selectColors
 	url = https://github.com/c9s/colorselector.vim.git
+[submodule "vim/bundle/matchit"]
+	path = vim/bundle/matchit
+	url = https://github.com/tsaleh/vim-matchit.git
