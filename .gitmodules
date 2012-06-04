@@ -40,3 +40,6 @@
 [submodule "vim/bundle/ragtag"]
 	path = vim/bundle/ragtag
 	url = https://github.com/lessmind/vim-ragtag.git
+[submodule "vim/bundle/css-color"]
+	path = vim/bundle/css-color
+	url = https://github.com/ap/vim-css-color.git
