@@ -31,3 +31,6 @@
 [submodule "vim/bundle/pdv-standalone"]
 	path = vim/bundle/pdv-standalone
 	url = https://lessmind@github.com/lessmind/pdv-standalone.git
+[submodule "vim/bundle/selectColors"]
+	path = vim/bundle/selectColors
+	url = https://github.com/c9s/colorselector.vim.git
