@@ -37,3 +37,6 @@
 [submodule "vim/bundle/matchit"]
 	path = vim/bundle/matchit
 	url = https://github.com/tsaleh/vim-matchit.git
+[submodule "vim/bundle/ragtag"]
+	path = vim/bundle/ragtag
+	url = https://github.com/lessmind/vim-ragtag.git
