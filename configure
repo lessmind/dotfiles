@@ -15,41 +15,53 @@ bash_completion.d
 jshint.json
 )
 
+setup() {
+	echo "......setting up config files"
+	if [ ! -d ${HOME}/${BACKUP_DIR} ]; then
+		if [ -a ${HOME}/${BACKUP_DIR} ]; then
+			rm -rf ${HOME}/${BACKUP_DIR}
+		fi
+		echo "......creating backup directory ${BACKUP_DIR}"
+		mkdir ${HOME}/${BACKUP_DIR}
+	fi
+	# link dotfiles
+	for file in ${DOTFILES[@]}; do
+		if [ -a ${HOME}/.${file} ]; then
+			echo "......backup old ${HOME}/.${file} into ${BACKUP_DIR}"
+			mv ${HOME}/.${file} ${HOME}/${BACKUP_DIR}/bak.${file}-$( date +%s )
+		fi
+		ln -s ${DIR}/${file} ${HOME}/.${file}
+	done
+	# initial vim plugins
+	echo "initializing git submodules"
+	cd ${DIR} && git submodule init
+	cd ${DIR} && git submodule update
+}
+
+remove() {
+	echo "......removing config files"
+	for file in ${DOTFILES[@]}; do
+		# remove link dotfiles when it's a symbolic link
+		if [ -h ${HOME}/.${file} -a $(ls -l ${HOME}/.${file} | awk '{print $NF;}') == $(echo ${DIR}/${file}) ]; then
+			echo "......removing symbolic link ${file}"
+			rm ${HOME}/.${file}
+		fi
+	done
+}
+
 case ${1} in
 	setup)
-		echo "......setting up config files"
-		if [ ! -d ${HOME}/${BACKUP_DIR} ]; then
-			if [ -a ${HOME}/${BACKUP_DIR} ]; then
-				rm -rf ${HOME}/${BACKUP_DIR}
-			fi
-			echo "......creating backup directory ${BACKUP_DIR}"
-			mkdir ${HOME}/${BACKUP_DIR}
-		fi
-		# link dotfiles
-		for file in ${DOTFILES[@]}; do
-			if [ -a ${HOME}/.${file} ]; then
-				echo "......backup old ${HOME}/.${file} into ${BACKUP_DIR}"
-				mv ${HOME}/.${file} ${HOME}/${BACKUP_DIR}/bak.${file}-$( date +%s )
-			fi
-			ln -s ${DIR}/${file} ${HOME}/.${file}
-		done
-		# initial vim plugins
-		echo "initializing git submodules"
-		cd ${DIR} && git submodule init
-		cd ${DIR} && git submodule update
+		setup
+	;;
+	reset)
+		remove
+		setup
 	;;
 	remove)
-		echo "......removing config files"
-		for file in ${DOTFILES[@]}; do
-			# remove link dotfiles when it's a symbolic link
-			if [ -h ${HOME}/.${file} -a $(ls -l ${HOME}/.${file} | awk '{print $NF;}') == $(echo ${DIR}/${file}) ]; then
-				echo "......removing symbolic link ${file}"
-				rm ${HOME}/.${file}
-			fi
-		done
+		remove
 	;;
 	**)
-		echo Usage: ${0} "{setup|remove}" >&2
+		echo Usage: ${0} "{setup|remove|reset}" >&2
 		exit 1
 	;;
 esac
