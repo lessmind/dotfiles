@@ -86,15 +86,16 @@ nmap <F3> :TagbarToggle<CR><C-w>p
 vmap <F3> <esc>:TagbarToggle<CR><C-w>p
 imap <F3> <esc>:TagbarToggle<CR><C-w>p
 " prev/next tab
-nmap <F11> gT
-nmap <F12> gt
-imap <F11> <esc>gT
-imap <F12> <esc>gt
-vmap <F11> <esc>gT
-vmap <F12> <esc>gt
+nmap <C-left> gT
+nmap <C-right> gt
+imap <C-left> <esc>gT
+imap <C-right> <esc>gt
+vmap <C-left> <esc>gT
+vmap <C-right> <esc>gt
 " paste mode toggle
-nmap <F10> :set paste!<BAR>set paste?<CR>
-vmap <F10> <esc>:set paste!<BAR>set paste?<CR>
+nmap <F7> :set paste!<BAR>set paste?<CR>
+imap <F7> <esc>:set paste!<BAR>set paste?<CR>i
+vmap <F7> <esc>:set paste!<BAR>set paste?<CR>
 " prev/next all mark
 nmap <S-F8> <Leader>?
 nmap <S-F9> <Leader>/
@@ -102,5 +103,5 @@ nmap <S-F9> <Leader>/
 nmap <F8> <Leader>#
 nmap <F9> <Leader>*
 " prev/next match in vimgrep
-nmap <S-F11> :cp<CR>
-nmap <S-F12> :cn<CR>
+nmap <C-up> :cp<CR>
+nmap <C-down> :cn<CR>
