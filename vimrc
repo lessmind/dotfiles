@@ -61,7 +61,7 @@ if has("autocmd")
 endif
 
 " pdv
-let g:pdv_cfg_Version = '0.05'
+let g:pdv_cfg_Version = '0.0.1a'
 let g:pdv_cfg_Author = 'nevermind'
 let g:pdv_cfg_paste = 0
 
