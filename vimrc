@@ -36,7 +36,7 @@ set cin
 
 " fold
 set foldmethod=indent
-set foldlevel=1
+set foldlevel=10
 "set foldnestmax=3
 set foldenable
 
