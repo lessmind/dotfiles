@@ -105,3 +105,7 @@ nmap <F9> <Leader>*
 " prev/next match in vimgrep
 nmap <C-up> :cp<CR>
 nmap <C-down> :cn<CR>
+" getInstance
+nmap <C-L> ostatic private $_instance = null;<CR>static public function getInstance() {<CR>if( self::$_instance === null ) {<CR>self::$_instance = new self();<CR>}<CR>return self::$_instance;<CR>}<ESC>
+vmap <C-L> <esc>ostatic private $_instance = null;<CR>static public function getInstance() {<CR>if( self::$_instance === null ) {<CR>self::$_instance = new self();<CR>}<CR>return self::$_instance;<CR>}<ESC>
+imap <C-L> <esc>ostatic private $_instance = null;<CR>static public function getInstance() {<CR>if( self::$_instance === null ) {<CR>self::$_instance = new self();<CR>}<CR>return self::$_instance;<CR>}<ESC>
