@@ -1,6 +1,3 @@
-[submodule "vim/bundle/syntax-js"]
-	path = vim/bundle/syntax-js
-	url = git://github.com/othree/javascript-syntax.vim.git
 [submodule "vim/bundle/gsession"]
 	path = vim/bundle/gsession
 	url = git://github.com/c9s/gsession.vim.git
@@ -43,3 +40,6 @@
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
 	url = git://github.com/majutsushi/tagbar.git
+[submodule "bundle/javascript-syntax"]
+	path = bundle/javascript-syntax
+	url = git://github.com/othree/javascript-syntax.vim.git
