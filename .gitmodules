@@ -1,6 +1,3 @@
-[submodule "vim/bundle/gsession"]
-	path = vim/bundle/gsession
-	url = git://github.com/c9s/gsession.vim.git
 [submodule "vim/bundle/scheme-mango"]
 	path = vim/bundle/scheme-mango
 	url = git://github.com/goatslacker/mango.vim.git
@@ -43,3 +40,6 @@
 [submodule "bundle/javascript-syntax"]
 	path = bundle/javascript-syntax
 	url = git://github.com/othree/javascript-syntax.vim.git
+[submodule "bundle/gsession"]
+	path = bundle/gsession
+	url = git://github.com/c9s/gsession.vim.git
