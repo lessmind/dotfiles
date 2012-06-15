@@ -53,6 +53,12 @@ let g:syntastic_mode_map = { 'mode': 'active',
 "autocmd FileType html NeoComplCacheCachingSyntax html
 "autocmd FileType phtml NeoComplCacheCachingSyntax html
 
+" Omni Comletion
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+
 " filetype
 if has("autocmd")
 	filetype on
