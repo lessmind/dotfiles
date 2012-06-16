@@ -7,9 +7,6 @@
 [submodule "bundle/gsession"]
 	path = bundle/gsession
 	url = git://github.com/c9s/gsession.vim.git
-[submodule "bundle/mango"]
-	path = bundle/mango
-	url = git://github.com/goatslacker/mango.vim.git
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
@@ -52,3 +49,6 @@
 [submodule "bundle/jellybeans-colorscheme"]
 	path = bundle/jellybeans-colorscheme
 	url = git://github.com/nanotech/jellybeans.vim.git
+[submodule "bundle/mango-colorscheme"]
+	path = bundle/mango-colorscheme
+	url = git://github.com/goatslacker/mango.vim.git
