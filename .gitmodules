@@ -49,3 +49,6 @@
 [submodule "bundle/donbass-colorscheme"]
 	path = bundle/donbass-colorscheme
 	url = git://github.com/vim-scripts/donbass.vim.git
+[submodule "bundle/jellybeans-colorscheme"]
+	path = bundle/jellybeans-colorscheme
+	url = git://github.com/nanotech/jellybeans.vim.git
