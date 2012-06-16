@@ -45,13 +45,14 @@ let g:syntastic_javascript_jshint_conf='~/.jshint.json'
 let g:syntastic_mode_map = { 'mode': 'active',
 						   \ 'active_filetypes': ['js', 'php', 'phtml']}
 
-" NeoComplCache auto command
-"autocmd FileType * NeoComplCacheEnable
-"autocmd FileType * NeoComplCacheCachingTags
-"autocmd FileType php NeoComplCacheCachingSyntax php
-"autocmd FileType javascript NeoComplCacheCachingSyntax javascript
-"autocmd FileType html NeoComplCacheCachingSyntax html
-"autocmd FileType phtml NeoComplCacheCachingSyntax html
+" NeoComplCache
+let g:acp_enableAtStartup = 0
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_smart_case = 1
+let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
 " Omni Comletion
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
