@@ -52,3 +52,6 @@
 [submodule "bundle/mango-colorscheme"]
 	path = bundle/mango-colorscheme
 	url = git://github.com/goatslacker/mango.vim.git
+[submodule "bundle/sudo"]
+	path = bundle/sudo
+	url = git://github.com/vim-scripts/sudo.vim.git
