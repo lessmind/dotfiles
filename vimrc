@@ -6,7 +6,7 @@ syntax on
 " 256 color
 set background=dark
 set t_Co=256
-colorscheme mango
+colorscheme donbass
 
 " tags
 set tags=./tags,tags
