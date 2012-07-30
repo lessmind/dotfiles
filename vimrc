@@ -37,6 +37,7 @@ set cin
 " fold
 set foldmethod=indent
 set foldlevel=10
+
 "set foldnestmax=3
 set foldenable
 
@@ -79,19 +80,23 @@ mapclear
 " pdv
 nmap <C-K> :call PhpDocSingle()<CR>
 vmap <C-K> :call PhpDocRange()<CR>
+
 " tabmapping
 vmap <tab> >gv
 vmap <BS> <gv
 nmap <tab> v>
 nmap <BS> v<
+
 " nerd tree toggle
 imap <F2> <esc> :NERDTreeToggle<CR>
 vmap <F2> <esc> :NERDTreeToggle<CR>
 nmap <F2> :NERDTreeToggle<CR>
+
 " tagbar toggle
 nmap <F3> :TagbarToggle<CR><C-w>p
 vmap <F3> <esc>:TagbarToggle<CR><C-w>p
 imap <F3> <esc>:TagbarToggle<CR><C-w>p
+
 " prev/next tab
 nmap <C-left> gT
 nmap <C-right> gt
@@ -99,20 +104,28 @@ imap <C-left> <esc>gT
 imap <C-right> <esc>gt
 vmap <C-left> <esc>gT
 vmap <C-right> <esc>gt
+
 " paste mode toggle
 nmap <F7> :set paste!<BAR>set paste?<CR>
 imap <F7> <esc>:set paste!<BAR>set paste?<CR>i
 vmap <F7> <esc>:set paste!<BAR>set paste?<CR>
+
 " prev/next all mark
 nmap <S-F8> <Leader>?
 nmap <S-F9> <Leader>/
+
 " prev/next current mark
 nmap <F8> <Leader>#
 nmap <F9> <Leader>*
+
 " prev/next match in vimgrep
 nmap <C-up> :cp<CR>
 nmap <C-down> :cn<CR>
+
 " getInstance
 nmap <C-L> ostatic private $_instance = null;<CR>static public function getInstance() {<CR>if( self::$_instance === null ) {<CR>self::$_instance = new self();<CR>}<CR>return self::$_instance;<CR>}<ESC>
 vmap <C-L> <esc>ostatic private $_instance = null;<CR>static public function getInstance() {<CR>if( self::$_instance === null ) {<CR>self::$_instance = new self();<CR>}<CR>return self::$_instance;<CR>}<ESC>
 imap <C-L> <esc>ostatic private $_instance = null;<CR>static public function getInstance() {<CR>if( self::$_instance === null ) {<CR>self::$_instance = new self();<CR>}<CR>return self::$_instance;<CR>}<ESC>
+
+" sudo
+cmap w!! w !sudo tee >/dev/null %
