@@ -52,3 +52,6 @@
 [submodule "bundle/mango-colorscheme"]
 	path = bundle/mango-colorscheme
 	url = git://github.com/goatslacker/mango.vim.git
+[submodule "bundle/nerdtree-tabs"]
+	path = bundle/nerdtree-tabs
+	url = git://github.com/jistr/vim-nerdtree-tabs.git
