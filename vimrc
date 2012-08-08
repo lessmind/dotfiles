@@ -6,7 +6,7 @@ syntax on
 " 256 color
 set background=dark
 set t_Co=256
-colorscheme jellybeans
+colorscheme mango
 
 " tags
 set tags=./tags,tags
@@ -17,16 +17,22 @@ set nocompatible
 " enable backspace
 set backspace=2
 
-" tab setting
-set shiftwidth=4
-set tabstop=4
-"set softtabstop=4
-
+" show percentage
 set ruler
 
 " search 
 set hlsearch
 set incsearch
+
+" tab indent
+set shiftwidth=4
+set tabstop=4
+
+" 2 space indent for ruby, eruby, python, yaml
+autocmd FileType ruby,eruby,python,yaml setlocal tabstop=2
+autocmd FileType ruby,eruby,python,yaml setlocal softtabstop=2
+autocmd FileType ruby,eruby,python,yaml setlocal shiftwidth=2
+autocmd FileType ruby,eruby,python,yaml setlocal expandtab
 
 set cursorline
 
@@ -129,3 +135,6 @@ imap <C-L> <esc>ostatic private $_instance = null;<CR>static public function get
 
 " sudo
 cmap w!! w !sudo tee >/dev/null %
+
+" foldlevel
+cmap ff set foldlevel=
