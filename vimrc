@@ -29,10 +29,13 @@ set shiftwidth=4
 set tabstop=4
 
 " 2 space indent for ruby, eruby, python, yaml
-autocmd FileType ruby,eruby,python,yaml setlocal tabstop=2
-autocmd FileType ruby,eruby,python,yaml setlocal softtabstop=2
-autocmd FileType ruby,eruby,python,yaml setlocal shiftwidth=2
-autocmd FileType ruby,eruby,python,yaml setlocal expandtab
+function Set2SpaceIndent()
+	setlocal tabstop=2
+	setlocal softtabstop=2
+	setlocal shiftwidth=2
+	setlocal expandtab
+endfunction
+autocmd FileType ruby,eruby,python,yaml call Set2SpaceIndent()
 
 set cursorline
 
@@ -75,8 +78,8 @@ if has("autocmd")
 endif
 
 " pdv
-let g:pdv_cfg_Version = '0.0.1a'
-let g:pdv_cfg_Author = 'nevermind'
+"let g:pdv_cfg_Version = '0.0.1a'
+let g:pdv_cfg_Author = 'ada@e-ipro.com'
 let g:pdv_cfg_paste = 0
 
 " unmapping
@@ -94,9 +97,9 @@ nmap <tab> v>
 nmap <BS> v<
 
 " nerd tree toggle
-imap <F2> <esc> :NERDTreeToggle<CR>
-vmap <F2> <esc> :NERDTreeToggle<CR>
-nmap <F2> :NERDTreeToggle<CR>
+imap <F2> <esc> :NERDTreeTabsToggle<CR>
+vmap <F2> <esc> :NERDTreeTabsToggle<CR>
+nmap <F2> :NERDTreeTabsToggle<CR>
 
 " tagbar toggle
 nmap <F3> :TagbarToggle<CR><C-w>p
