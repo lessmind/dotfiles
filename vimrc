@@ -97,9 +97,9 @@ nmap <tab> v>
 nmap <BS> v<
 
 " nerd tree toggle
-imap <F2> <esc> :NERDTreeTabsToggle<CR>
-vmap <F2> <esc> :NERDTreeTabsToggle<CR>
-nmap <F2> :NERDTreeTabsToggle<CR>
+imap <F2> <esc> :NERDTreeToggle<CR>
+vmap <F2> <esc> :NERDTreeToggle<CR>
+nmap <F2> :NERDTreeToggle<CR>
 
 " tagbar toggle
 nmap <F3> :TagbarToggle<CR><C-w>p
@@ -131,16 +131,14 @@ nmap <F9> <Leader>*
 nmap <C-up> :cp<CR>
 nmap <C-down> :cn<CR>
 
-" getInstance
-nmap <C-L> ostatic private $_instance = null;<CR>static public function getInstance() {<CR>if( self::$_instance === null ) {<CR>self::$_instance = new self();<CR>}<CR>return self::$_instance;<CR>}<ESC>
-vmap <C-L> <esc>ostatic private $_instance = null;<CR>static public function getInstance() {<CR>if( self::$_instance === null ) {<CR>self::$_instance = new self();<CR>}<CR>return self::$_instance;<CR>}<ESC>
-imap <C-L> <esc>ostatic private $_instance = null;<CR>static public function getInstance() {<CR>if( self::$_instance === null ) {<CR>self::$_instance = new self();<CR>}<CR>return self::$_instance;<CR>}<ESC>
+" quicker command line
+nmap <Space> :
 
 " sudo
-cmap w!! w !sudo tee >/dev/null %
+cmap sudow w !sudo tee >/dev/null %
 
 " foldlevel
-cmap ff set foldlevel=
+cmap sfl set foldlevel=
 
 " snipmate
 "let g:snips_author = ''
