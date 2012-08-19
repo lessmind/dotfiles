@@ -79,8 +79,8 @@ endif
 
 " pdv
 "let g:pdv_cfg_Version = '0.0.1a'
-let g:pdv_cfg_Author = 'ada@e-ipro.com'
-let g:pdv_cfg_paste = 0
+"let g:pdv_cfg_Author = 'ada@e-ipro.com'
+"let g:pdv_cfg_paste = 0
 
 " unmapping
 mapclear
@@ -141,3 +141,6 @@ cmap w!! w !sudo tee >/dev/null %
 
 " foldlevel
 cmap ff set foldlevel=
+
+" snipmate
+"let g:snips_author = ''
