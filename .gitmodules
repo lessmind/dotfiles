@@ -55,3 +55,15 @@
 [submodule "bundle/nerdtree-tabs"]
 	path = bundle/nerdtree-tabs
 	url = git://github.com/jistr/vim-nerdtree-tabs.git
+[submodule "bundle/snipmate"]
+	path = bundle/snipmate
+	url = git://github.com/garbas/vim-snipmate.git
+[submodule "bundle/utils-tlib"]
+	path = bundle/utils-tlib
+	url = git://github.com/tomtom/tlib_vim.git
+[submodule "bundle/utils-mw-utils"]
+	path = bundle/utils-mw-utils
+	url = git://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "bundle/snipmate-snippets"]
+	path = bundle/snipmate-snippets
+	url = git://github.com/lessmind/snipmate-snippets.git
