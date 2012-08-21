@@ -73,3 +73,6 @@
 [submodule "bundle/nerdcommentor"]
 	path = bundle/nerdcommentor
 	url = git://github.com/scrooloose/nerdcommenter.git
+[submodule "bundle/snipmate"]
+	path = bundle/snipmate
+	url = git://github.com/lessmind/vim-snipmate.git
