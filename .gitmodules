@@ -72,7 +72,7 @@
 	url = git://github.com/shawncplus/php.vim.git
 [submodule "bundle/javascript-syntax"]
 	path = bundle/javascript-syntax
-	url = git://github.com/lessmind/javascript-syntax.vim.git
+	url = git://github.com/lessmind/vim-javascript.git
 [submodule "bundle/css-color"]
 	path = bundle/css-color
 	url = git://github.com/lessmind/vim-css-color.git
