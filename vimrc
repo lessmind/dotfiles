@@ -37,7 +37,11 @@ function Set2SpaceIndent()
 endfunction
 autocmd FileType ruby,eruby,python,yaml call Set2SpaceIndent()
 
+" cursor line(tells which line you are)
 set cursorline
+
+" set iskeyword
+set iskeyword-=-
 
 " indent
 set ai
@@ -79,8 +83,21 @@ endif
 
 " pdv
 "let g:pdv_cfg_Version = '0.0.1a'
-"let g:pdv_cfg_Author = 'ada@e-ipro.com'
+let g:pdv_cfg_Author = 'ada@e-ipro.com'
 "let g:pdv_cfg_paste = 0
+
+" iskeyword
+autocmd FileType php setlocal iskeyword+=$
+autocmd FileType javascript setlocal iskeyword+=$
+autocmd FileType css,sass,scss setlocal iskeyword+=-
+
+" php syntax setting
+let php_noShortTags=1
+let php_parent_error_close=1
+let php_parent_error_open=1
+let php_htmlInStrings=1
+let php_special_vars=1
+let php_special_functions=1
 
 " unmapping
 mapclear
