@@ -19,9 +19,6 @@
 [submodule "bundle/mark-karkat"]
 	path = bundle/mark-karkat
 	url = git://github.com/vim-scripts/Mark--Karkat.git
-[submodule "bundle/php-syntax"]
-	path = bundle/php-syntax
-	url = git://github.com/StanAngeloff/php.vim.git
 [submodule "bundle/php-html-indent"]
 	path = bundle/php-html-indent
 	url = git://github.com/rekky/php-html-indent.vim.git
@@ -76,3 +73,6 @@
 [submodule "bundle/snipmate"]
 	path = bundle/snipmate
 	url = git://github.com/lessmind/vim-snipmate.git
+[submodule "bundle/php-syntax"]
+	path = bundle/php-syntax
+	url = git://github.com/shawncplus/php.vim.git
