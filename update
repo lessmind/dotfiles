@@ -1,0 +1,4 @@
+#!/bin/bash
+set -e
+git submodule foreach git fetch origin
+git submodule foreach git checkout origin/master
