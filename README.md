@@ -17,3 +17,10 @@ This will remove all dotfile linked from this repository(make sure this reposito
 
 	cd <clone path>
 	./configure remove
+
+Vim plugins
+-----------
+You could easily enable or disable specified plugins by modify the symbolic links in vim/bundle, this is useful to setup different developing environment without handling complicated submodules.
+
+	rm vim/bundle/[plugin]	# for disable
+	cd vim/bundle && link -s ../../bundle/[plugin]	# for enable
