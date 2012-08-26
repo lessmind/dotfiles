@@ -131,9 +131,6 @@ nmap <F9> <Leader>*
 nmap <C-up> :cp<CR>
 nmap <C-down> :cn<CR>
 
-" quicker command line
-nmap <Space> :
-
 " sudo
 cmap sudow w !sudo tee >/dev/null %
 
