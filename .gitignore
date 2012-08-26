@@ -1,3 +1,5 @@
 vim/.netrwhist
 *.swp
 *.orig
+utils/*
+bash_completion.d/*
