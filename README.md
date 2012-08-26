@@ -29,3 +29,9 @@ For disable
 For enable
 
 	cd vim/bundle && link -s ../../bundle/[plugin] ./
+
+Quick reinstall
+---------------
+In case that git pull can't update the submodules when its source have been changed, here's a quick one line reinstall instruction if you install this repository in ~/dotfiles
+
+	cd ~ && rm -rf dotfiles && git clone git@github.com:lessmind/dotfiles && cd dotfiles && ./configure reset
