@@ -40,9 +40,6 @@ autocmd FileType ruby,eruby,python,yaml call Set2SpaceIndent()
 " cursor line(tells which line you are)
 set cursorline
 
-" set iskeyword
-set iskeyword-=-
-
 " indent
 set ai
 set cin
@@ -90,6 +87,10 @@ let g:pdv_cfg_Author = 'ada@e-ipro.com'
 autocmd FileType php setlocal iskeyword+=$
 autocmd FileType javascript setlocal iskeyword+=$
 autocmd FileType css,sass,scss setlocal iskeyword+=-
+
+" backup dir
+set backupdir=~/.vim/backup,.
+set directory=~/.vim/backup,.
 
 " php syntax setting
 let php_noShortTags=1
