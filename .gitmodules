@@ -69,7 +69,7 @@
 	url = git://github.com/lessmind/vim-snipmate.git
 [submodule "bundle/php-syntax"]
 	path = bundle/php-syntax
-	url = git://github.com/shawncplus/php.vim.git
+	url = git://github.com/lessmind/php.vim.git
 [submodule "bundle/javascript-syntax"]
 	path = bundle/javascript-syntax
 	url = git://github.com/lessmind/vim-javascript.git
