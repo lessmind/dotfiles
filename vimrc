@@ -80,8 +80,11 @@ endif
 
 " pdv
 "let g:pdv_cfg_Version = '0.0.1a'
-let g:pdv_cfg_Author = 'ada@e-ipro.com'
+"let g:pdv_cfg_Author = ''
 "let g:pdv_cfg_paste = 0
+
+" snipmate
+"let g:snips_author = ''
 
 " iskeyword
 autocmd FileType php setlocal iskeyword+=$
@@ -93,10 +96,10 @@ set backupdir=~/.vim/backup,.
 set directory=~/.vim/backup,.
 
 " php syntax setting
-let php_noShortTags=1
-let php_parent_error_close=1
-let php_parent_error_open=1
-let php_htmlInStrings=1
+"let php_noShortTags=1
+"let php_parent_error_close=1
+"let php_parent_error_open=1
+"let php_htmlInStrings=1
 let php_special_vars=1
 let php_special_functions=1
 
@@ -154,6 +157,3 @@ cmap sudow w !sudo tee >/dev/null %
 
 " foldlevel
 cmap sfl set foldlevel=
-
-" snipmate
-"let g:snips_author = ''
