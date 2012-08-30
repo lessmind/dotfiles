@@ -1,8 +1,13 @@
+" disable compatible to vi
+set nocompatible
+
+" call pathogen
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
 " colorful
 syntax on
+
 " 256 color
 set background=dark
 set t_Co=256
@@ -10,9 +15,6 @@ colorscheme mango
 
 " tags
 set tags=./tags,tags
-
-" disable compatible to vi
-set nocompatible
 
 " enable backspace
 set backspace=2
@@ -23,6 +25,9 @@ set ruler
 " search 
 set hlsearch
 set incsearch
+
+" indent
+set cin
 
 " tab indent
 set shiftwidth=4
@@ -40,16 +45,45 @@ autocmd FileType ruby,eruby,python,yaml call Set2SpaceIndent()
 " cursor line(tells which line you are)
 set cursorline
 
-" indent
-set ai
-set cin
+" filetype
+if has("autocmd")
+	filetype on
+	filetype plugin on
+	filetype plugin indent on
+endif
 
 " fold
+set foldenable
 set foldmethod=indent
 set foldlevel=10
 
-"set foldnestmax=3
-set foldenable
+" iskeyword
+autocmd FileType php setlocal iskeyword+=$
+autocmd FileType javascript setlocal iskeyword+=$
+autocmd FileType css,sass,scss setlocal iskeyword+=-
+
+" no actually close
+set hidden
+
+" backup dir
+set backupdir=~/.vim/backup,.
+set directory=~/.vim/backup,.
+
+" don't wrap lines
+set nowrap
+
+" highlight matched parenthesis
+set showmatch
+
+" change terminal title
+set title
+
+" paste toggle in insert mode
+set pastetoggle=<F7>
+
+" #######################################
+"             Plugin Settings
+" #######################################
 
 " syntastic
 let g:syntastic_javascript_jshint_conf='~/.jshint.json'
@@ -65,18 +99,11 @@ let g:neocomplcache_enable_underbar_completion = 1
 let g:neocomplcache_min_syntax_length = 3
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
-" Omni Comletion
+" Omni Comletion(for NeoComplCache)
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-
-" filetype
-if has("autocmd")
-	filetype on
-	filetype plugin on
-	filetype plugin indent on
-endif
 
 " pdv
 "let g:pdv_cfg_Version = '0.0.1a'
@@ -86,15 +113,6 @@ endif
 " snipmate
 "let g:snips_author = ''
 
-" iskeyword
-autocmd FileType php setlocal iskeyword+=$
-autocmd FileType javascript setlocal iskeyword+=$
-autocmd FileType css,sass,scss setlocal iskeyword+=-
-
-" backup dir
-set backupdir=~/.vim/backup,.
-set directory=~/.vim/backup,.
-
 " php syntax setting
 "let php_noShortTags=1
 "let php_parent_error_close=1
@@ -103,19 +121,42 @@ set directory=~/.vim/backup,.
 let php_special_vars=1
 let php_special_functions=1
 
+" #######################################
+"             Key Mappings
+" #######################################
+"
 " unmapping
 mapclear
 
-" key mapping
-" pdv
-nmap <C-K> :call PhpDocSingle()<CR>
-vmap <C-K> :call PhpDocRange()<CR>
-
+" ############ maps for build-in keys
 " tabmapping
 vmap <tab> >gv
 vmap <BS> <gv
 nmap <tab> v>
 nmap <BS> v<
+
+" prev/next tab
+nmap <C-left> gT
+nmap <C-right> gt
+imap <C-left> <esc>gT
+imap <C-right> <esc>gt
+vmap <C-left> <esc>gT
+vmap <C-right> <esc>gt
+
+" prev/next match in vimgrep
+nmap <C-up> :cp<CR>
+nmap <C-down> :cn<CR>
+
+" sudo
+cmap sudow w !sudo tee >/dev/null %
+
+" foldlevel
+cmap sfl set foldlevel=
+
+" ############ maps for plugins
+" pdv
+nmap <C-K> :call PhpDocSingle()<CR>
+vmap <C-K> :call PhpDocRange()<CR>
 
 " nerd tree toggle
 imap <F2> <esc> :NERDTreeToggle<CR>
@@ -127,19 +168,6 @@ nmap <F3> :TagbarToggle<CR><C-w>p
 vmap <F3> <esc>:TagbarToggle<CR><C-w>p
 imap <F3> <esc>:TagbarToggle<CR><C-w>p
 
-" prev/next tab
-nmap <C-left> gT
-nmap <C-right> gt
-imap <C-left> <esc>gT
-imap <C-right> <esc>gt
-vmap <C-left> <esc>gT
-vmap <C-right> <esc>gt
-
-" paste mode toggle
-nmap <F7> :set paste!<BAR>set paste?<CR>
-imap <F7> <esc>:set paste!<BAR>set paste?<CR>i
-vmap <F7> <esc>:set paste!<BAR>set paste?<CR>
-
 " prev/next all mark
 nmap <S-F8> <Leader>?
 nmap <S-F9> <Leader>/
@@ -147,13 +175,3 @@ nmap <S-F9> <Leader>/
 " prev/next current mark
 nmap <F8> <Leader>#
 nmap <F9> <Leader>*
-
-" prev/next match in vimgrep
-nmap <C-up> :cp<CR>
-nmap <C-down> :cn<CR>
-
-" sudo
-cmap sudow w !sudo tee >/dev/null %
-
-" foldlevel
-cmap sfl set foldlevel=
