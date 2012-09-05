@@ -13,6 +13,9 @@ set background=dark
 set t_Co=256
 colorscheme mango
 
+" vars
+let g:author_name=''
+
 " tags
 set tags=./tags,tags
 
@@ -70,7 +73,7 @@ set backupdir=~/.vim/backup,.
 set directory=~/.vim/backup,.
 
 " don't wrap lines
-set nowrap
+"set nowrap
 
 " highlight matched parenthesis
 set showmatch
@@ -107,11 +110,13 @@ autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
 " pdv
 "let g:pdv_cfg_Version = '0.0.1a'
-"let g:pdv_cfg_Author = ''
+let g:pdv_cfg_Author=g:author_name
 "let g:pdv_cfg_paste = 0
 
 " snipmate
-"let g:snips_author = ''
+let g:snips_author=g:author_name
+let g:snips_trigger_key='<C-J>'
+let g:snips_trigger_key_backwards='<C-H>'
 
 " php syntax setting
 "let php_noShortTags=1
