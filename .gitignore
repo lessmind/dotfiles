@@ -1,4 +1,5 @@
 vim/.netrwhist
+vim/backup/*
 *.swp
 *.orig
 utils/*

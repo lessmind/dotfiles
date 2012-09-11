@@ -45,3 +45,4 @@ alias ls=${LS_ALIAS}
 alias ll='ls -al'
 alias la='ls -a'
 alias vi='vim'
+alias tmux='tmux -2'

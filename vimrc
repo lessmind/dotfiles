@@ -134,6 +134,9 @@ let php_special_functions=1
 mapclear
 
 " ############ maps for build-in keys
+" shortcut for open tag in new tab
+nmap <C-h> <C-w>]<C-w>T
+
 " tabmapping
 vmap <tab> >gv
 vmap <BS> <gv
