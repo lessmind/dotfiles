@@ -46,3 +46,9 @@ alias ll='ls -al'
 alias la='ls -a'
 alias vi='vim'
 alias tmux='tmux -2'
+
+# ignore C-S signal in putty to prevent freezing terminal
+stty ixany
+stty ixoff -ixon
+stty stop undef
+stty start undef
