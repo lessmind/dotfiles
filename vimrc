@@ -84,6 +84,18 @@ set title
 " paste toggle in insert mode
 set pastetoggle=<F7>
 
+" status line
+"set laststatus=2
+"set statusline=%r\ %w%l:\ %m%F\ %y
+set laststatus=2
+set statusline=%r%m
+set statusline+=%F\ 
+set statusline+=\ %04l/%03c\ 
+set statusline+=\ %Y\ 
+set statusline+=\ %{&ff=='unix'?'\\n':(&ff=='mac'?'\\r':'\\r\\n')}\ 
+set statusline+=\ %{&fenc!=''?&fenc:&enc}\ 
+set statusline+=\ 0x%04.4B
+
 " #######################################
 "             Plugin Settings
 " #######################################
