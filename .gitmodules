@@ -66,7 +66,7 @@
 	url = git://github.com/scrooloose/nerdcommenter.git
 [submodule "bundle/snipmate"]
 	path = bundle/snipmate
-	url = git://github.com/lessmind/vim-snipmate.git
+	url = git://github.com/garbas/vim-snipmate.git
 [submodule "bundle/php-syntax"]
 	path = bundle/php-syntax
 	url = git://github.com/lessmind/php.vim.git
