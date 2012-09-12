@@ -1,6 +1,6 @@
 [user]
-	name = nevermind
-	email = nevermind@2be.com.tw
+	name = lessmind
+	email = nevermind.cs96@gmail.com
 [alias]
 	recommit = commit --amend
 	unstage = reset HEAD
