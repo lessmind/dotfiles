@@ -76,7 +76,7 @@ set directory=~/.vim/backup,.
 "set nowrap
 
 " highlight matched parenthesis
-set showmatch
+"set showmatch
 
 " change terminal title
 set title
@@ -117,6 +117,9 @@ let g:pdv_cfg_Author=g:author_name
 let g:snips_author=g:author_name
 let g:snips_trigger_key='<C-J>'
 let g:snips_trigger_key_backwards='<C-H>'
+let g:snipMate = {}
+let g:snipMate.scope_aliases = {} 
+let g:snipMate.scope_aliases['php'] = 'php' " prevent trigger other snippets in php
 
 " php syntax setting
 "let php_noShortTags=1
