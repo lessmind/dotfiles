@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+_switch_remote() {
+	git remote set-url ${1} ${2}
+	#git remote show ${1}
+}
+case ${1} in
+	rw)
+		_switch_remote origin git@github.com:lessmind/dotfiles.git
+	;;
+	ro)
+		_switch_remote origin git://github.com/lessmind/dotfiles.git
+	;;
+	**)
+		echo "Usage: ${0} [rw|ro]" >&2
+		exit 1
+	;;
+esac
