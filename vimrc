@@ -5,6 +5,9 @@ set nocompatible
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+" encoding
+set encoding=utf-8
+
 " colorful
 syntax on
 
