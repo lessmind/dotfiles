@@ -96,6 +96,18 @@ set statusline+=\ %{&ff=='unix'?'\\n':(&ff=='mac'?'\\r':'\\r\\n')}\
 set statusline+=\ %{&fenc!=''?&fenc:&enc}\ 
 set statusline+=\ 0x%04.4B
 
+" #############################################################
+" read local setting specify in different machines or projects
+" #############################################################
+" from home
+if filereadable($HOME."/.vimrc.local")
+	so ${HOME}/.vimrc.local
+endif
+" from current directory
+if filereadable("./.vimrc.local")
+	so ./.vimrc.local
+endif
+
 " #######################################
 "             Plugin Settings
 " #######################################

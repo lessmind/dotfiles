@@ -1,0 +1,11 @@
+" ###########################################################################
+" .vimrc.local is use to specify local settings depends on different project
+" or environment, and this is a skeleton that you can copy to your project
+" root or your home directory, enjoy it!
+" ###########################################################################
+
+" ###### set the username for all plugins
+" let g:author_name=''
+
+" ###### set the custom tag file localtion, you can copy this lineto include more
+" set tags+=~/dev/tags/gmp
