@@ -9,19 +9,24 @@ Below will link all dotfiles in this repository into your home directory, but wo
 
 Don't forget to modify the [user] section in last command.
 
-To make Syntastic check in Javascript work, install [jshint](https://github.com/jshint/jshint).
+To make Syntastic check in JavaScript work, install [jshint](https://github.com/jshint/jshint).
 
-Oneline Install
+Quick Install
 ---------------
 This instruction will install this project into your ~/dotfiles and overwrtite all your current settings. (origin settings will backup to ~/dotfiles\_bak)
 
-	mkdir -p ~/dotfiles && cd ~/dotfiles && wget https://github.com/downloads/lessmind/dotfiles/pack.tar.gz && tar -xvf pack.tar.gz && rm pack.tar.gz && git checkout master && git pull origin master && ./configure setup
+	mkdir -p ~/dotfiles && cd ~/dotfiles && wget https://github.com/downloads/lessmind/dotfiles/pack.tar.gz \
+	&& tar -xvf pack.tar.gz && rm pack.tar.gz && git checkout master \
+	&& git fetch origin && git pull origin master && ./configure setup
 
-Oneline reinstall
+Quick reinstall
 ---------------
 In case that git pull can't update the submodules when its source have been changed, here's a quick one line reinstall instruction if you install this repository in ~/dotfiles
 
-	rm -rf ~/dotfiles && mkdir -p ~/dotfiles && cd ~/dotfiles && wget https://github.com/downloads/lessmind/dotfiles/pack.tar.gz && tar -xvf pack.tar.gz && rm pack.tar.gz && git checkout master && git pull origin master && ./configure reset
+	rm -rf ~/dotfiles && mkdir -p ~/dotfiles && cd ~/dotfiles \
+	&& wget https://github.com/downloads/lessmind/dotfiles/pack.tar.gz \
+	&& tar -xvf pack.tar.gz && rm pack.tar.gz && git checkout master \
+	&& git fetch origin && git pull origin master && ./configure reset
 
 Uninstall
 ---------
