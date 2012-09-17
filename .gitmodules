@@ -15,7 +15,7 @@
 	url = git://github.com/scrooloose/syntastic.git
 [submodule "bundle/mark-karkat"]
 	path = bundle/mark-karkat
-	url = git://github.com/vim-scripts/Mark--Karkat.git
+	url = git://github.com/lessmind/Mark--Karkat.git
 [submodule "bundle/php-html-indent"]
 	path = bundle/php-html-indent
 	url = git://github.com/rekky/php-html-indent.vim.git
