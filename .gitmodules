@@ -27,7 +27,7 @@
 	url = git://github.com/c9s/colorselector.vim.git
 [submodule "bundle/matchit"]
 	path = bundle/matchit
-	url = git://github.com/tsaleh/vim-matchit.git
+	url = git://github.com/lessmind/matchit.git
 [submodule "bundle/ragtag"]
 	path = bundle/ragtag
 	url = git://github.com/lessmind/vim-ragtag.git
