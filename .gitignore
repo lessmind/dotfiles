@@ -4,3 +4,4 @@ vim/backup/*
 *.orig
 utils/*
 bash_completion.d/*
+*.gz
