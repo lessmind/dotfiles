@@ -30,7 +30,7 @@
 	url = git://github.com/tsaleh/vim-matchit.git
 [submodule "bundle/ragtag"]
 	path = bundle/ragtag
-	url = git://github.com/tpope/vim-ragtag.git
+	url = git://github.com/lessmind/vim-ragtag.git
 [submodule "bundle/neocomplcache"]
 	path = bundle/neocomplcache
 	url = git://github.com/Shougo/neocomplcache.git
