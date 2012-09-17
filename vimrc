@@ -82,7 +82,7 @@ set directory=~/.vim/backup,.
 "set showmatch
 
 " change terminal title
-set title
+"set title
 
 " paste toggle in insert mode
 set pastetoggle=<F7>
