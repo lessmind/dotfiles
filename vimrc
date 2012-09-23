@@ -99,8 +99,9 @@ set statusline+=\ %{&ff=='unix'?'\\n':(&ff=='mac'?'\\r':'\\r\\n')}\
 set statusline+=\ %{&fenc!=''?&fenc:&enc}\ 
 set statusline+=\ 0x%04.4B
 
-" auto set markdown filetypes
+" auto set filetypes
 autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+autocmd BufNewFile,BufRead *.{conf} set filetype=conf
 
 " #############################################################
 " read local setting specify in different machines or projects
