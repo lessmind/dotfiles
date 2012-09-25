@@ -1,12 +1,21 @@
 " disable compatible to vi
 set nocompatible
 
-" call pathogen
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+" set completion way
+set wildmenu
 
-" encoding
-set encoding=utf-8
+" ?
+set ttyfast
+
+" encoding utf8 & without bomb
+set encoding=utf-8 nobomb
+
+" change <Leader>
+let mapleader=","
+
+" no empty newlines at the end of files
+set binary
+set noeol
 
 " colorful
 syntax on
@@ -14,7 +23,6 @@ syntax on
 " 256 color
 set background=dark
 set t_Co=256
-colorscheme mango
 
 " vars
 let g:author_name=''
@@ -27,6 +35,9 @@ set backspace=2
 
 " show percentage
 set ruler
+
+" show current mode
+set showmode
 
 " search 
 set hlsearch
@@ -46,16 +57,29 @@ function Set2SpaceIndent()
 	setlocal shiftwidth=2
 	setlocal expandtab
 endfunction
-autocmd FileType ruby,eruby,python,yaml call Set2SpaceIndent()
 
 " cursor line(tells which line you are)
 set cursorline
 
-" filetype
+" autocmds
 if has("autocmd")
 	filetype on
 	filetype plugin on
 	filetype plugin indent on
+	" iskeyword
+	autocmd FileType php setlocal iskeyword+=$
+	autocmd FileType javascript setlocal iskeyword+=$
+	autocmd FileType css,sass,scss setlocal iskeyword+=-
+	" auto set markdown filetypes
+	autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+	autocmd BufNewFile,BufRead *.{conf} set filetype=conf
+	" change tab spacing
+	autocmd FileType ruby,eruby,python,yaml call Set2SpaceIndent()
+	" Omni completions
+	autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+	autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+	autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+	autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 endif
 
 " fold
@@ -63,45 +87,27 @@ set foldenable
 set foldmethod=indent
 set foldlevel=10
 
-" iskeyword
-autocmd FileType php setlocal iskeyword+=$
-autocmd FileType javascript setlocal iskeyword+=$
-autocmd FileType css,sass,scss setlocal iskeyword+=-
 
 " no actually close
 set hidden
 
 " backup dir
 set backupdir=~/.vim/backup,.
-set directory=~/.vim/backup,.
+set directory=~/.vim/swaps,.
+if exists("&undodir")
+	set undodir=~/.vim/undo
+endif
 
-" don't wrap lines
-"set nowrap
-
-" highlight matched parenthesis
-"set showmatch
-
-" change terminal title
-"set title
+" show trailng spaces
+" set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
+set list
+set lcs=tab:\ \ ,trail:·
 
 " paste toggle in insert mode
 set pastetoggle=<F7>
 
 " status line
-"set laststatus=2
-"set statusline=%r\ %w%l:\ %m%F\ %y
 set laststatus=2
-set statusline=%r%m
-set statusline+=%F\ 
-set statusline+=\ %04l/%03c\ 
-set statusline+=\ %Y\ 
-set statusline+=\ %{&ff=='unix'?'\\n':(&ff=='mac'?'\\r':'\\r\\n')}\ 
-set statusline+=\ %{&fenc!=''?&fenc:&enc}\ 
-set statusline+=\ 0x%04.4B
-
-" auto set filetypes
-autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
-autocmd BufNewFile,BufRead *.{conf} set filetype=conf
 
 " #############################################################
 " read local setting specify in different machines or projects
@@ -114,6 +120,13 @@ endif
 if filereadable("./.vimrc.local")
 	so ./.vimrc.local
 endif
+
+" #######################################
+"             Load plugins
+" #######################################
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+colorscheme mango
 
 " #######################################
 "             Plugin Settings
@@ -132,12 +145,6 @@ let g:neocomplcache_enable_camel_case_completion = 1
 let g:neocomplcache_enable_underbar_completion = 1
 let g:neocomplcache_min_syntax_length = 3
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-
-" Omni Comletion(for NeoComplCache)
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
 " pdv
 "let g:pdv_cfg_Version = '0.0.1a'
@@ -189,11 +196,8 @@ vmap <C-right> <esc>gt
 nmap <C-up> :cp<CR>
 nmap <C-down> :cn<CR>
 
-" sudo
-cmap sudow w !sudo tee >/dev/null %
-
-" foldlevel
-cmap sfl set foldlevel=
+" sudo save
+noremap <leader>W :w !sudo tee % > /dev/null<CR>
 
 " ############ maps for plugins
 " pdv

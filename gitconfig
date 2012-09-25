@@ -5,6 +5,7 @@
 	recommit = commit --amend
 	unstage = reset HEAD
 	view = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cblueby %an %Cgreen(%ar)%Creset'
+	touch = "!f() { mkdir -p $(dirname $1); touch $1; git add $1; }; f"
 [color]
 	ui = auto
 [merge]
