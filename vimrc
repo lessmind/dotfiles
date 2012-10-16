@@ -39,7 +39,7 @@ set ruler
 " show current mode
 set showmode
 
-" search 
+" search
 set hlsearch
 set incsearch
 
@@ -50,6 +50,13 @@ set cin
 set shiftwidth=4
 set tabstop=4
 
+" 1 space indent for xml
+function Set1SpaceIndent()
+	setlocal tabstop=1
+	setlocal softtabstop=1
+	setlocal shiftwidth=1
+	setlocal expandtab
+endfunction
 " 2 space indent for ruby, eruby, python, yaml
 function Set2SpaceIndent()
 	setlocal tabstop=2
@@ -156,7 +163,7 @@ let g:snips_author=g:author_name
 let g:snips_trigger_key='<C-J>'
 let g:snips_trigger_key_backwards='<C-H>'
 let g:snipMate = {}
-let g:snipMate.scope_aliases = {} 
+let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['php'] = 'php' " prevent trigger other snippets in php
 
 " php syntax setting
@@ -205,9 +212,12 @@ nmap <C-K> :call PhpDocSingle()<CR>
 vmap <C-K> :call PhpDocRange()<CR>
 
 " nerd tree toggle
-imap <F2> <esc> :NERDTreeToggle<CR>
-vmap <F2> <esc> :NERDTreeToggle<CR>
-nmap <F2> :NERDTreeToggle<CR>
+imap <F2> <esc> :NERDTreeMirrorToggle<CR>
+vmap <F2> <esc> :NERDTreeMirrorToggle<CR>
+nmap <F2> :NERDTreeMirrorToggle<CR>
+"imap <F2> <esc> :NERDTreeToggle<CR>
+"vmap <F2> <esc> :NERDTreeToggle<CR>
+"nmap <F2> :NERDTreeToggle<CR>
 
 " tagbar toggle
 nmap <F3> :TagbarToggle<CR><C-w>p
