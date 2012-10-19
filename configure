@@ -10,6 +10,7 @@ bashrc
 bash_profile
 vim
 vimrc
+gemrc
 gitconfig
 bash_completion.d
 jshint.json
