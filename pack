@@ -2,5 +2,6 @@
 DIR="$( cd $(dirname "${0}") && pwd )"
 rm -rf ${DIR}/vim/backup/* ${DIR}/vim/swaps/*
 cd ${DIR} && ./mode ro
-cd ${DIR} && tar --exclude=*.gz -f pack.tar.gz -cv .
+#cd ${DIR} && tar --exclude=*.gz --exclude=.git -f pack.tar.gz -cv .
+cd ${DIR} && tar -f pack.tar.gz -zcv ./.git/modules
 cd ${DIR} && ./mode rw
