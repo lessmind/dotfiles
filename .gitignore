@@ -1,3 +1,7 @@
+vim.lite/.netrwhist
+vim.lite/backup/*
+vim.lite/swaps/*
+vim.lite/undo/*
 vim/.netrwhist
 vim/backup/*
 vim/swaps/*
@@ -7,3 +11,5 @@ vim/undo/*
 utils/*
 bash_completion.d/*
 *.gz
+.gitmodules
+version

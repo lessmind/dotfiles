@@ -3,19 +3,33 @@
 # get the script root path
 DIR="$( cd $(dirname "${0}") && pwd )"
 BACKUP_DIR="dotfiles_bak"
+conf_file="full.conf"
 
-# list
-DOTFILES=(
-bashrc
-bash_profile
-vim
-vimrc
-vimrc.ext
-gemrc
-gitconfig
-bash_completion.d
-jshint.json
-)
+do_link() {
+	link_file=${1}
+	link_name=${2}
+	if [ $# -lt 2 ]; then
+		link_name=${1}
+	fi
+	if [ -a ${HOME}/.${link_name} ]; then
+		echo "......backup old ${HOME}/.${link_name} into ${BACKUP_DIR}"
+		mv ${HOME}/.${link_name} ${HOME}/${BACKUP_DIR}/bak.${link_name}-$( date +%s )
+	fi
+	ln -s ${DIR}/${link_file} ${HOME}/.${link_name}
+}
+
+rm_link() {
+	link_file=${1}
+	link_name=${2}
+	if [ $# -lt 2 ]; then
+		link_name=${1}
+	fi
+	# remove link dotfiles when it's a symbolic link
+	if [ -h ${HOME}/.${link_name} -a $(ls -l ${HOME}/.${link_name} | awk '{print $NF;}') == $(echo ${DIR}/${link_file}) ]; then
+		echo "......removing symbolic link ${link_name}"
+		rm ${HOME}/.${link_name}
+	fi
+}
 
 setup() {
 	echo "......setting up config files"
@@ -27,12 +41,8 @@ setup() {
 		mkdir ${HOME}/${BACKUP_DIR}
 	fi
 	# link dotfiles
-	for file in ${DOTFILES[@]}; do
-		if [ -a ${HOME}/.${file} ]; then
-			echo "......backup old ${HOME}/.${file} into ${BACKUP_DIR}"
-			mv ${HOME}/.${file} ${HOME}/${BACKUP_DIR}/bak.${file}-$( date +%s )
-		fi
-		ln -s ${DIR}/${file} ${HOME}/.${file}
+	cat ${DIR}/${conf_file} | while read line; do
+		do_link ${line}
 	done
 	# initial vim plugins
 	echo "initializing git submodules"
@@ -42,28 +52,55 @@ setup() {
 
 remove() {
 	echo "......removing config files"
-	for file in ${DOTFILES[@]}; do
-		# remove link dotfiles when it's a symbolic link
-		if [ -h ${HOME}/.${file} -a $(ls -l ${HOME}/.${file} | awk '{print $NF;}') == $(echo ${DIR}/${file}) ]; then
-			echo "......removing symbolic link ${file}"
-			rm ${HOME}/.${file}
-		fi
+	cat ${DIR}/${conf_file} | while read line; do
+		rm_link ${line}
 	done
 }
 
-case ${1} in
-	setup)
-		setup
-	;;
-	reset)
-		remove
-		setup
-	;;
-	remove)
-		remove
-	;;
-	**)
-		echo Usage: ${0} "{setup|remove|reset}" >&2
-		exit 1
-	;;
-esac
+current_version() {
+	touch ${DIR}/version
+	echo "full$(cat ${DIR}/version)" | grep -oe '\(full\|lite\)' | tail -1
+}
+
+reset_submodules() {
+	echo test
+}
+
+switch_version() {
+	case ${1} in
+		lite)
+			switch_action ${*}
+			;;
+		full)
+			switch_action ${*}
+			;;
+		**)
+			switch_action $(current_version) ${1}
+			;;
+	esac
+}
+
+switch_action() {
+	echo "Configuring version [${1}].........."
+	echo ${1} > ${DIR}/version
+	cd ${DIR} && ln -sf gitmodules.${1} .gitmodules
+	conf_file=${1}.conf
+	case ${2} in
+		setup)
+			setup
+			;;
+		reset)
+			remove
+			setup
+			;;
+		remove)
+			remove
+			;;
+		**)
+			echo "Usage: ${0} [lite|full] setup|remove|reset" >&2
+			exit 1
+			;;
+	esac
+}
+
+switch_version ${*}

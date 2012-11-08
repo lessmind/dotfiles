@@ -1,0 +1,18 @@
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
+	url = git://github.com/scrooloose/nerdtree.git
+[submodule "bundle/mark-karkat"]
+	path = bundle/mark-karkat
+	url = git://github.com/lessmind/Mark--Karkat.git
+[submodule "bundle/mango-colorscheme"]
+	path = bundle/mango-colorscheme
+	url = git://github.com/goatslacker/mango.vim.git
+[submodule "bundle/nerdtree-tabs"]
+	path = bundle/nerdtree-tabs
+	url = git://github.com/jistr/vim-nerdtree-tabs.git
+[submodule "bundle/easymotion"]
+	path = bundle/easymotion
+	url = git://github.com/Lokaltog/vim-easymotion.git
+[submodule "bundle/nerdcommentor"]
+	path = bundle/nerdcommentor
+	url = git://github.com/scrooloose/nerdcommenter.git
