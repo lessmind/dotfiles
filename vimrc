@@ -1,3 +1,6 @@
+" #######################################
+"             Vim settings
+" #######################################
 " disable compatible to vi
 set nocompatible
 
@@ -24,9 +27,6 @@ syntax on
 set background=dark
 set t_Co=256
 
-" vars
-let g:author_name=''
-
 " tags
 set tags=./tags,tags
 
@@ -50,21 +50,6 @@ set cin
 set shiftwidth=4
 set tabstop=4
 
-" 1 space indent for xml
-function Set1SpaceIndent()
-	setlocal tabstop=1
-	setlocal softtabstop=1
-	setlocal shiftwidth=1
-	setlocal expandtab
-endfunction
-" 2 space indent for ruby, eruby, python, yaml
-function Set2SpaceIndent()
-	setlocal tabstop=2
-	setlocal softtabstop=2
-	setlocal shiftwidth=2
-	setlocal expandtab
-endfunction
-
 " cursor line(tells which line you are)
 set cursorline
 
@@ -73,27 +58,10 @@ if has("autocmd")
 	filetype on
 	filetype plugin on
 	filetype plugin indent on
-	" iskeyword
-	autocmd FileType php setlocal iskeyword+=$
-	autocmd FileType javascript setlocal iskeyword+=$
-	autocmd FileType css,sass,scss setlocal iskeyword+=-
 	" auto set markdown filetypes
 	autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 	autocmd BufNewFile,BufRead *.{conf} set filetype=conf
-	" change tab spacing
-	autocmd FileType ruby,eruby,python,yaml call Set2SpaceIndent()
-	" Omni completions
-	autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-	autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-	autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-	autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 endif
-
-" fold
-set foldenable
-set foldmethod=indent
-set foldlevel=10
-
 
 " no actually close
 set hidden
@@ -105,28 +73,11 @@ if exists("&undodir")
 	set undodir=~/.vim/undo
 endif
 
-" show trailng spaces
-" set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
-set list
-set lcs=tab:\ \ ,trail:·
-
 " paste toggle in insert mode
 set pastetoggle=<F7>
 
 " status line
 set laststatus=2
-
-" #############################################################
-" read local setting specify in different machines or projects
-" #############################################################
-" from home
-if filereadable($HOME."/.vimrc.local")
-	so ${HOME}/.vimrc.local
-endif
-" from current directory
-if filereadable("./.vimrc.local")
-	so ./.vimrc.local
-endif
 
 " #######################################
 "             Load plugins
@@ -134,45 +85,6 @@ endif
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 colorscheme mango
-
-" #######################################
-"             Plugin Settings
-" #######################################
-
-" syntastic
-let g:syntastic_javascript_jshint_conf='~/.jshint.json'
-let g:syntastic_mode_map = { 'mode': 'active',
-						   \ 'active_filetypes': ['js', 'php', 'phtml']}
-
-" NeoComplCache
-let g:acp_enableAtStartup = 0
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_smart_case = 1
-let g:neocomplcache_enable_camel_case_completion = 1
-let g:neocomplcache_enable_underbar_completion = 1
-let g:neocomplcache_min_syntax_length = 3
-let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-
-" pdv
-"let g:pdv_cfg_Version = '0.0.1a'
-let g:pdv_cfg_Author=g:author_name
-"let g:pdv_cfg_paste = 0
-
-" snipmate
-let g:snips_author=g:author_name
-let g:snips_trigger_key='<C-J>'
-let g:snips_trigger_key_backwards='<C-H>'
-let g:snipMate = {}
-let g:snipMate.scope_aliases = {}
-let g:snipMate.scope_aliases['php'] = 'php' " prevent trigger other snippets in php
-
-" php syntax setting
-"let php_noShortTags=1
-"let php_parent_error_close=1
-"let php_parent_error_open=1
-"let php_htmlInStrings=1
-let php_special_vars=1
-let php_special_functions=1
 
 " #######################################
 "             Key Mappings
@@ -207,22 +119,10 @@ nmap <C-down> :cn<CR>
 noremap <leader>W :w !sudo tee % > /dev/null<CR>
 
 " ############ maps for plugins
-" pdv
-nmap <C-K> :call PhpDocSingle()<CR>
-vmap <C-K> :call PhpDocRange()<CR>
-
 " nerd tree toggle
 imap <F2> <esc> :NERDTreeMirrorToggle<CR>
 vmap <F2> <esc> :NERDTreeMirrorToggle<CR>
 nmap <F2> :NERDTreeMirrorToggle<CR>
-"imap <F2> <esc> :NERDTreeToggle<CR>
-"vmap <F2> <esc> :NERDTreeToggle<CR>
-"nmap <F2> :NERDTreeToggle<CR>
-
-" tagbar toggle
-nmap <F3> :TagbarToggle<CR><C-w>p
-vmap <F3> <esc>:TagbarToggle<CR><C-w>p
-imap <F3> <esc>:TagbarToggle<CR><C-w>p
 
 " prev/next all mark
 nmap <S-F8> <Leader>?
@@ -231,3 +131,8 @@ nmap <S-F9> <Leader>/
 " prev/next current mark
 nmap <F8> <Leader>#
 nmap <F9> <Leader>*
+
+" read vimrc extension
+if filereadable($HOME."/.vimrc.ext")
+	so ${HOME}/.vimrc.ext
+endif
