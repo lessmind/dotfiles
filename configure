@@ -13,9 +13,10 @@ do_link() {
 		link_name=${1}
 	fi
 	if [ -a ${HOME}/.${link_name} ]; then
-		echo "......backup old ${HOME}/.${link_name} into ${BACKUP_DIR}"
+		echo "> backup old ${HOME}/.${link_name} into ${BACKUP_DIR}"
 		mv ${HOME}/.${link_name} ${HOME}/${BACKUP_DIR}/bak.${link_name}-$( date +%s )
 	fi
+	echo "> linking dotfile .${link_name}"
 	ln -s ${DIR}/${link_file} ${HOME}/.${link_name}
 }
 
@@ -27,18 +28,18 @@ rm_link() {
 	fi
 	# remove link dotfiles when it's a symbolic link
 	if [ -h ${HOME}/.${link_name} -a $(ls -l ${HOME}/.${link_name} | awk '{print $NF;}') == $(echo ${DIR}/${link_file}) ]; then
-		echo "......removing symbolic link ${link_name}"
+		echo "> removing symbolic link ${link_name}"
 		rm ${HOME}/.${link_name}
 	fi
 }
 
 setup() {
-	echo "......setting up config files"
+	echo "[setting up config files]"
 	if [ ! -d ${HOME}/${BACKUP_DIR} ]; then
 		if [ -a ${HOME}/${BACKUP_DIR} ]; then
 			rm -rf ${HOME}/${BACKUP_DIR}
 		fi
-		echo "......creating backup directory ${BACKUP_DIR}"
+		echo "> creating backup directory ${BACKUP_DIR}"
 		mkdir ${HOME}/${BACKUP_DIR}
 	fi
 	# link dotfiles
@@ -46,13 +47,13 @@ setup() {
 		do_link ${line}
 	done
 	# initial vim plugins
-	echo "initializing git submodules"
-	cd ${DIR} && git submodule init
+	echo "[initializing git submodules]"
+	cd ${DIR} && git submodule init > /dev/null
 	pull_submodules
 }
 
 remove() {
-	echo "......removing config files"
+	echo "[removing config files]"
 	cat ${DIR}/${conf_file} | while read line; do
 		rm_link ${line}
 	done
@@ -70,7 +71,8 @@ pull_submodules() {
 }
 
 update_module() {
-	cd ${DIR} && git submodule update "${2}"
+	echo "> updating submodule ${2}"
+	cd ${DIR} && git submodule update "${2}" > /dev/null
 }
 
 switch_version() {
@@ -88,7 +90,7 @@ switch_version() {
 }
 
 switch_action() {
-	echo "Configuring version [${1}].........."
+	echo "=== Configuring version ${1} ==="
 	echo ${1} > ${DIR}/version
 	conf_file=${1}.conf
 	module_file=gitmodules.${1}
