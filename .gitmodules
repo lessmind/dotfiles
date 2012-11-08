@@ -1,0 +1,81 @@
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = git://github.com/majutsushi/tagbar.git
+[submodule "bundle/gsession"]
+	path = bundle/gsession
+	url = git://github.com/c9s/gsession.vim.git
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
+	url = git://github.com/scrooloose/nerdtree.git
+[submodule "bundle/json-syntax"]
+	path = bundle/json-syntax
+	url = git://github.com/leshill/vim-json.git
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = git://github.com/scrooloose/syntastic.git
+[submodule "bundle/mark-karkat"]
+	path = bundle/mark-karkat
+	url = git://github.com/lessmind/Mark--Karkat.git
+[submodule "bundle/php-html-indent"]
+	path = bundle/php-html-indent
+	url = git://github.com/rekky/php-html-indent.vim.git
+[submodule "bundle/pdv-standalone"]
+	path = bundle/pdv-standalone
+	url = git://github.com/lessmind/pdv-standalone.git
+[submodule "bundle/colorselector"]
+	path = bundle/colorselector
+	url = git://github.com/c9s/colorselector.vim.git
+[submodule "bundle/matchit"]
+	path = bundle/matchit
+	url = git://github.com/lessmind/matchit.git
+[submodule "bundle/ragtag"]
+	path = bundle/ragtag
+	url = git://github.com/lessmind/vim-ragtag.git
+[submodule "bundle/neocomplcache"]
+	path = bundle/neocomplcache
+	url = git://github.com/Shougo/neocomplcache.git
+[submodule "bundle/donbass-colorscheme"]
+	path = bundle/donbass-colorscheme
+	url = git://github.com/vim-scripts/donbass.vim.git
+[submodule "bundle/jellybeans-colorscheme"]
+	path = bundle/jellybeans-colorscheme
+	url = git://github.com/nanotech/jellybeans.vim.git
+[submodule "bundle/mango-colorscheme"]
+	path = bundle/mango-colorscheme
+	url = git://github.com/goatslacker/mango.vim.git
+[submodule "bundle/nerdtree-tabs"]
+	path = bundle/nerdtree-tabs
+	url = git://github.com/jistr/vim-nerdtree-tabs.git
+[submodule "bundle/utils-tlib"]
+	path = bundle/utils-tlib
+	url = git://github.com/tomtom/tlib_vim.git
+[submodule "bundle/utils-mw-utils"]
+	path = bundle/utils-mw-utils
+	url = git://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "bundle/snipmate-snippets"]
+	path = bundle/snipmate-snippets
+	url = git://github.com/lessmind/snippets.git
+[submodule "bundle/easymotion"]
+	path = bundle/easymotion
+	url = git://github.com/Lokaltog/vim-easymotion.git
+[submodule "bundle/surround"]
+	path = bundle/surround
+	url = git://github.com/tpope/vim-surround.git
+[submodule "bundle/nerdcommentor"]
+	path = bundle/nerdcommentor
+	url = git://github.com/scrooloose/nerdcommenter.git
+[submodule "bundle/snipmate"]
+	path = bundle/snipmate
+	url = git://github.com/garbas/vim-snipmate.git
+[submodule "bundle/php-syntax"]
+	path = bundle/php-syntax
+	url = git://github.com/lessmind/php.vim.git
+[submodule "bundle/javascript-syntax"]
+	path = bundle/javascript-syntax
+	url = git://github.com/lessmind/vim-javascript.git
+[submodule "bundle/css-color"]
+	path = bundle/css-color
+	url = git://github.com/lessmind/vim-css-color.git
+[submodule "bundle/repeat"]
+	path = bundle/repeat
+	url = git://github.com/tpope/vim-repeat.git

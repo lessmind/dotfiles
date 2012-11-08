@@ -11,5 +11,4 @@ vim/undo/*
 utils/*
 bash_completion.d/*
 *.gz
-.gitmodules
 version
