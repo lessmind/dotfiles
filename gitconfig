@@ -1,6 +1,3 @@
-[user]
-	name = lessmind
-	email = nevermind.cs96@gmail.com
 [alias]
 	recommit = commit --amend
 	addd = add .
@@ -14,3 +11,6 @@
 	tool = vimdiff
 [core]
 	editor = vim
+[user]
+	name = lessmind
+	email = nevermind.cs96@gmail.com

@@ -50,6 +50,16 @@ setup() {
 	echo "[initializing git submodules]"
 	cd ${DIR} && git submodule init > /dev/null
 	pull_submodules
+	# finish msg
+	echo ""
+	echo ""
+	echo "============================================="
+	echo " Setup completed, now execute the following"
+	echo " commands to specify your gitconfig user"
+	echo " sections."
+	echo "============================================="
+	echo "git config --global user.name [username]"
+	echo "git config --global user.email [email]"
 }
 
 remove() {
