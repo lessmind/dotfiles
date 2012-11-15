@@ -7,6 +7,9 @@ set nocompatible
 " set completion way
 set wildmenu
 
+" set quickfix list open in tab
+set switchbuf=usetab
+
 " ?
 set ttyfast
 
@@ -112,8 +115,8 @@ vmap <C-left> <esc>gT
 vmap <C-right> <esc>gt
 
 " prev/next match in vimgrep
-nmap <C-up> :cp<CR>
-nmap <C-down> :cn<CR>
+nmap <C-up> :silent cp<CR>
+nmap <C-down> :silent cn<CR>
 
 " sudo save
 noremap <leader>W :w !sudo tee % > /dev/null<CR>
