@@ -7,6 +7,7 @@
 	touch = "!f() { mkdir -p $(dirname $1); touch $1; git add $1; }; f"
 	stop-track = update-index --assume-unchanged
 	resume-track = update-index --no-assume-unchanged
+	show-modified-stop-track = !git ls-files -v | grep -v ^[A-Z]
 [color]
 	ui = auto
 [merge]
