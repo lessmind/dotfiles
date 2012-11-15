@@ -89,6 +89,9 @@ update_module() {
 
 switch_version() {
 	case ${1} in
+		version)
+			current_version
+			;;
 		lite)
 			switch_action ${*}
 			;;
