@@ -17,7 +17,7 @@ set ttyfast
 set encoding=utf-8 nobomb
 
 " change <Leader>
-let mapleader=","
+"let mapleader=","
 
 " no empty newlines at the end of files
 set binary
