@@ -51,7 +51,7 @@ setup() {
 	cd ${DIR} && git submodule init > /dev/null
 	pull_submodules
 	# stop tracking gitconfig
-	cd ${DIR} && git update-index --assume-unchanged gitconfig
+	#cd ${DIR} && git update-index --assume-unchanged gitconfig
 	# finish msg
 	echo ""
 	echo ""
