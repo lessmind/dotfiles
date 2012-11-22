@@ -90,6 +90,11 @@ call pathogen#helptags()
 colorscheme mango
 
 " #######################################
+"         Plugin configuration
+" #######################################
+let g:EasyMotion_leader_key = '<Leader><space>'
+
+" #######################################
 "             Key Mappings
 " #######################################
 "
