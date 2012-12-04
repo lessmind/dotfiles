@@ -4,18 +4,11 @@
 " vars
 let g:author_name=''
 
-" 1 space indent for xml
-function Set1SpaceIndent()
-	setlocal tabstop=1
-	setlocal softtabstop=1
-	setlocal shiftwidth=1
-	setlocal expandtab
-endfunction
-" 2 space indent for ruby, eruby, python, yaml
-function Set2SpaceIndent()
-	setlocal tabstop=2
-	setlocal softtabstop=2
-	setlocal shiftwidth=2
+" replace tab into replace with specify width
+function SetSpaceIndent(sp)
+	execute "setlocal tabstop=".a:sp
+	execute "setlocal softtabstop=".a:sp
+	execute "setlocal shiftwidth=".a:sp
 	setlocal expandtab
 endfunction
 
@@ -24,12 +17,13 @@ if has("autocmd")
 	filetype on
 	filetype plugin on
 	filetype plugin indent on
-	" iskeyword
+	" append iskeyword
 	autocmd FileType php setlocal iskeyword+=$
 	autocmd FileType javascript setlocal iskeyword+=$
 	autocmd FileType css,sass,scss setlocal iskeyword+=-
 	" change tab spacing
-	autocmd FileType ruby,eruby,python,yaml call Set2SpaceIndent()
+	autocmd FileType css,sass,scss,php,javascript,html call SetSpaceIndent(4)
+	autocmd FileType ruby,eruby,python,yaml call SetSpaceIndent(2)
 	" Omni completions
 	autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 	autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
