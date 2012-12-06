@@ -25,7 +25,9 @@ fi
 
 # prompt string with git branch display & dirty bit
 GIT_PS1_SHOWDIRTYSTATE=1
-PS1='\[\033[01;34m\]\u\[\033[01;37m\]@\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;31m\]\W\[\033[00m\]$(__git_ps1 "(%s)")\$ '
+PS1_WITH_GIT='\[\033[01;34m\]\u\[\033[01;37m\]@\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;31m\]\W\[\033[00m\]$(__git_ps1 "(%s)")\$ '
+PS1_WITHOUT_GIT='\[\033[01;34m\]\u\[\033[01;37m\]@\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;31m\]\W\[\033[00m\]\$ '
+PS1=${PS1_WITH_GIT}
 
 # system completion
 if [ -f "${COMPLETION_PATH}" ]; then
@@ -46,6 +48,8 @@ alias ll='ls -al'
 alias la='ls -a'
 alias vi='vim'
 alias tmux='tmux -2'
+alias ps1withoutgit='PS1=${PS1_WITHOUT_GIT}'
+alias ps1withgit='PS1=${PS1_WITH_GIT}'
 
 # ignore C-S signal in putty to prevent freezing terminal
 stty ixany
