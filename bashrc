@@ -1,4 +1,4 @@
-# set path                                                                                                                                                                                                                                    
+# set path
 PATH=${HOME}/bin:/usr/local/bin:/usr/local/sbin:${PATH}
 
 # If not running interactively, don't do anything
