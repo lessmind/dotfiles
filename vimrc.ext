@@ -57,6 +57,9 @@ endif
 "             Plugin Settings
 " #######################################
 
+" zencoding
+let g:user_zen_leader_key = '<Leader>,'
+
 " syntastic
 let g:syntastic_javascript_jshint_conf='~/.jshint.json'
 let g:syntastic_mode_map = { 'mode': 'active',
