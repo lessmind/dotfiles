@@ -16,9 +16,6 @@
 [submodule "bundle/mark-karkat"]
 	path = bundle/mark-karkat
 	url = git://github.com/lessmind/Mark--Karkat.git
-[submodule "bundle/php-html-indent"]
-	path = bundle/php-html-indent
-	url = git://github.com/rekky/php-html-indent.vim.git
 [submodule "bundle/pdv-standalone"]
 	path = bundle/pdv-standalone
 	url = git://github.com/lessmind/pdv-standalone.git
