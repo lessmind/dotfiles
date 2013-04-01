@@ -17,3 +17,5 @@
 [user]
 	name = nevermind
 	email = nevermind.cs96@gmail.com
+[push]
+	default = simple
