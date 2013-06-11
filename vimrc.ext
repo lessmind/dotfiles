@@ -29,6 +29,8 @@ if has("autocmd")
 	autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 	autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 	autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+	" git
+	autocmd BufNewFile,BufRead *.git/modules/**/COMMIT_EDITMSG set ft=gitcommit
 endif
 
 " fold
@@ -38,8 +40,8 @@ set foldlevel=10
 
 " show trailng spaces
 " set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
-set list
-set lcs=tab:\ \ ,trail:·
+"set list
+"set lcs=tab:\ \ ,trail:·
 
 " #############################################################
 " read local setting specify in different machines or projects
