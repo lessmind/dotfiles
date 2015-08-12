@@ -22,7 +22,7 @@ if has("autocmd")
 	autocmd FileType javascript setlocal iskeyword+=$
 	autocmd FileType css,sass,scss setlocal iskeyword+=-
 	" change tab spacing
-	autocmd FileType css,sass,scss,php,javascript,html call SetSpaceIndent(4)
+	"autocmd FileType css,sass,scss,php,javascript,html call SetSpaceIndent(4)
 	autocmd FileType ruby,eruby,python,yaml call SetSpaceIndent(2)
 	" Omni completions
 	autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS

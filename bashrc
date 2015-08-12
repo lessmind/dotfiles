@@ -56,3 +56,7 @@ stty ixany
 stty ixoff -ixon
 stty stop undef
 stty start undef
+
+if [ -f ${HOME}/.bashrc.local ]; then
+	. ${HOME}/.bashrc.local
+fi

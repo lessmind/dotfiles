@@ -15,6 +15,7 @@
 [core]
 	editor = vim
 	pager = less -x4
+	excludesfile = ~/.gitignore
 [push]
 	default = upstream
 [user]

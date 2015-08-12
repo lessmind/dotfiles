@@ -26,6 +26,9 @@ set noeol
 " colorful
 syntax on
 
+" mark trailing space
+set list listchars=tab:\ \ ,trail:·
+
 " 256 color
 set background=dark
 set t_Co=256
