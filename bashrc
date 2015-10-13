@@ -1,6 +1,11 @@
 # set path
 PATH=${HOME}/bin:/usr/local/bin:/usr/local/sbin:${PATH}
 
+# source z autojumper
+if [ -f ${HOME}/.ext/z/z.sh ]; then
+	. ${HOME}/.ext/z/z.sh
+fi
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -18,6 +23,8 @@ export LESS_TERMCAP_us=$'\E[38;5;167m'
 if [ $(uname) == "Darwin" ]; then
 	COMPLETION_PATH=$(brew --prefix)/etc/bash_completion
 	LS_ALIAS='ls -vG'
+	export PATH=${PATH}:/Users/nevermind/Library/Android/sdk/tools
+	export EDITOR=vim
 else
 	COMPLETION_PATH=/etc/bash_completion
 	LS_ALIAS='ls --color=auto'
