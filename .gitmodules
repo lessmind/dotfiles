@@ -82,3 +82,6 @@
 [submodule "ext/z"]
 	path = ext/z
 	url = https://github.com/rupa/z.git
+[submodule "bundle/php-syntax-new"]
+	path = bundle/php-syntax-new
+	url = https://github.com/StanAngeloff/php.vim
