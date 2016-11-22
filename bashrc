@@ -6,6 +6,9 @@ if [ -f ${HOME}/.ext/z/z.sh ]; then
 	. ${HOME}/.ext/z/z.sh
 fi
 
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
