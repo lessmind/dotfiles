@@ -1,0 +1,23 @@
+[alias]
+	recommit = commit --amend
+	addd = add .
+	unstage = reset HEAD
+	unadd = reset HEAD
+	view = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cblueby %an %Cgreen(%ar)%Creset'
+	touch = "!f() { mkdir -p $(dirname $1); touch $1; git add $1; }; f"
+	stop-track = update-index --assume-unchanged
+	resume-track = update-index --no-assume-unchanged
+	show-modified-stop-track = !git ls-files -v | grep -v ^[A-Z]
+[color]
+	ui = auto
+[merge]
+	tool = vimdiff
+[core]
+	editor = vim
+	pager = less -x4
+	excludesfile = ~/.gitignore
+[push]
+	default = upstream
+[user]
+	name = nevermind
+	email = nevermind.cs96@gmail.com

@@ -1,0 +1,18 @@
+" #######################################
+"             Load plugins
+" #######################################
+call pathogen#infect()
+colorscheme jellybeans
+
+" nerd tree toggle
+imap <F2> <esc> :NERDTreeMirrorToggle<CR>
+vmap <F2> <esc> :NERDTreeMirrorToggle<CR>
+nmap <F2> :NERDTreeMirrorToggle<CR>
+
+" prev/next all mark
+nmap <S-F8> <Leader>?
+nmap <S-F9> <Leader>/
+
+" prev/next current mark
+nmap <F8> <Leader>#
+nmap <F9> <Leader>*

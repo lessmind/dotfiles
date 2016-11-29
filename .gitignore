@@ -1,0 +1,5 @@
+/files/.gitconfig
+/files/.vim/.netrwhist
+/files/.vim/backup/*
+/files/.vim/swaps/*
+/files/.vim/undo/*

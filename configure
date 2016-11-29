@@ -1,0 +1,74 @@
+#!/bin/bash
+
+# get the script root path
+SCRIPT_DIR="$( cd $(dirname "${0}") && pwd )"
+DOTFILE_DIR=$SCRIPT_DIR/files
+DOTFILE_TEMPLATE_DIR=$SCRIPT_DIR/templates
+BACKUP_DIR=$HOME/"dotfiles_bak_$(date +%s)"
+
+_show_usage() {
+	echo "Usage:" >&2
+	echo "	${0} install [name] [email]   # install dotfiles with specified git user config" >&2
+	echo "	${0} remove                   # remove all current installed dotfiles" >&2
+}
+
+_create_gitconfig() {
+	GIT_NAME=$1
+	GIT_EMAIL=$2
+	echo "Creating .gitconfig with $GIT_NAME $GIT_EMAIL"
+	echo -e "$(eval "echo -e \"`<$DOTFILE_TEMPLATE_DIR/.gitconfig`\"")" > $DOTFILE_DIR/.gitconfig
+}
+
+_backup_dotfile() {
+	if [[ -e $HOME/$1 ]]; then
+		if [[ ! -e $BACKUP_DIR ]]; then
+			echo "Creating backup dir $BACKUP_DIR"
+			mkdir -p $BACKUP_DIR
+		fi
+		echo "Backup old $1"
+		mv $HOME/$1 $BACKUP_DIR/$1
+	fi
+}
+
+_link_dotfile() {
+	echo "Installing $1"
+	ln -s $DOTFILE_DIR/$1 $HOME/$1
+}
+
+case $1 in
+	install)
+		if [[ "$#" != "3" ]]; then
+			_show_usage
+			exit 1
+		fi
+
+		pushd $SCRIPT_DIR
+		git submodule update --init
+		popd
+
+		_create_gitconfig $2 $3
+
+		ls -a $DOTFILE_DIR | while read f; do
+			if [[ "$f" != "." && "$f" != ".." ]]; then
+				_backup_dotfile $f
+			fi
+		done
+
+		ls -a $DOTFILE_DIR | while read f; do
+			if [[ "$f" != "." && "$f" != ".." ]]; then
+				_link_dotfile $f
+			fi
+		done
+		;;
+	remove)
+		ls -a $DOTFILE_DIR | while read f; do
+			if [[ "$f" != "." && "$f" != ".." ]]; then
+				_backup_dotfile $f
+			fi
+		done
+		;;
+	**)
+		_show_usage
+		exit 1
+		;;
+esac

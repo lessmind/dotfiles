@@ -1,0 +1,1 @@
+../plugins/z/z.sh

@@ -1,0 +1,5 @@
+[user]
+	name = $GIT_NAME
+	email = $GIT_EMAIL
+[include]
+	path = .gitconfig.local
