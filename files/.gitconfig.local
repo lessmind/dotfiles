@@ -18,6 +18,3 @@
 	excludesfile = ~/.gitignore
 [push]
 	default = upstream
-[user]
-	name = nevermind
-	email = nevermind.cs96@gmail.com
