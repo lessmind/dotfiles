@@ -3,6 +3,7 @@
 	addd = add .
 	unstage = reset HEAD
 	unadd = reset HEAD
+	mergeinto = fetch .
 	view = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cblueby %an %Cgreen(%ar)%Creset'
 	touch = "!f() { mkdir -p $(dirname $1); touch $1; git add $1; }; f"
 	stop-track = update-index --assume-unchanged
