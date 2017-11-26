@@ -19,3 +19,5 @@
 	excludesfile = ~/.gitignore
 [push]
 	default = upstream
+[diff]
+	renames = copies
