@@ -1,8 +1,7 @@
 {
-  "name": "nevermind",
+  "name": "linter-environment-setup",
   "version": "1.0.0",
   "description": "dev dependencies",
-  "repository": "git@github.com:lessmind/dotfiles.git",
   "dependencies": {},
   "devDependencies": {
     "babel-eslint": "^8.0.2",
@@ -22,3 +21,4 @@
   "author": "",
   "license": "ISC"
 }
+
