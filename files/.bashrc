@@ -66,3 +66,6 @@ stty start undef
 
 # source local bashrc
 [[ -f ${HOME}/.bashrc.local ]] && source ${HOME}/.bashrc.local
+
+# use .inputrc for cmd history search
+export INPUTRC=~/.inputrc
